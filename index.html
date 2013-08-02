@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Is WebRTC ready yet?</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prettify.css">
+    <style>
+      td.yes {
+        background: green
+      }
+      td.incomplete {
+        background: yellow
+      }
+      td.no {
+        background: red
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <section>
+        <h1>Is WebRTC Ready yet?</h1>
+        <table id="support">
+          <tr>
+            <th>Browser</th>
+            <th><a href="#peerConn">PeerConnections</a></th>
+            <th><a href="#getUserMedia">getUserMedia</a></th>
+            <th><a href="#mediaConstraints" title="for bandwidth control">mediaConstraints</a></th>
+            <th><a href="#mediaStream">MediaStream API</a></th>
+            <th><a href="#webAudio">WebAudio Integration</a></th>
+            <th><a href="#screenSharing">Screen Sharing</a></th>
+            <th><a href="#reliable">reliable dataChannels</a></th>
+            <th><a href="#unreliable">unreliable dataChannels</a></th>
+            <th><a href="#rebroadcast">Stream re-broadcasting</a></th>
+            <th><a href="#echo">Excellent echo cancellation</a></th>
+          </tr>
+          <tr>
+            <th>FireFox</th>
+            <td class="yes"></td>
+            <td class="yes"></td>
+            <td class="yes"></td>
+            <td class="no"></td>
+            <td class="incomplete"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+          </tr>
+          <tr>
+            <th>Chrome</th>
+            <td class="yes"></td>
+            <td class="yes"></td>
+            <td class="yes"></td>
+            <td class="yes"></td>
+            <td class="yes"></td>
+            <td class="no"></td>
+            <td class="yes"></td>
+            <td class="yes"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+          </tr>
+          <tr>
+            <th>Safari</th>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+          </tr>
+          <tr>
+            <th>IE</th>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+          </tr>
+          <tr>
+            <th>Opera</th>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td class="no"></td>
+          </tr>
+        </table>
+      </section>
+      <div class="featureExplanations">
+        <h3 id="peerConn">PeerConnections</h3>
+        <p>The basic building block for connecting to peers.</p>
+        <h3 id="getUserMedia">getUserMedia</h3>
+        <p>The ability to request access to a user's webcam and microphone.</p>
+        <h3 id="mediaConstraints">mediaConstraints</h3>
+        <p>The ability to specify restricted video sizes. This is important for bandwidth control.</p>
+        <h3 id="webAudio">WebAudio Integration</h3>
+        <p>WebAudio enables processing of raw audio. For WebRTC applications it's important that this capability not only exist, but that it's capable of being used with a MediaStream as a source. </p>
+        <h3 id="screenSharing">Screen Sharing</h3>
+        <p>The ability to request access to a MediaStream of the computer screen. This is crucial for feature parity with existing communication solutions.</p>
+        <h3 id="reliable">dataChannels</h3>
+        <p>Data channel support comes in two flavors: </p>
+        <div id="reliable">1. Reliable means they are guaranteed to arrive and arrive in the correct order. </div>
+        <div id="unreliable">2. Unreliable means that order doesn't matter and dropped messages are acceptable.</div>
+        <h3 id="rebroadcast">Stream re-broadcasting</h3>
+        <p>In order to support some of the more interesting topologies for routing data, we need to be able to take a MediaStream object from one peer and add it to another PeerConneciton. Without this, the only way of doing multi-user is a mesh network or a centralized server.</p>
+        <h3 id="echo">Excellent echo cancellation</h3>
+        <p>This is the most objective item in this list. But 3 or 4 users should be able to use a service like <a href="https://talky.io">Talky</a> without headphones on and not experience feedback problems.</p>
+      </div>
+      <footer><a id="andyet" href="http://andyet.com" target="_blank"><img src="http://andyet.com/images/logo.png" width="40"></a></footer>
+    </div>
+    <script src="prettyprint.js"></script>
+    <script src="http://static.andyet.com/tag.js"></script>
+  </body>
+</html>

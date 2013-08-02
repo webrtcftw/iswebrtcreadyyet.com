@@ -1,0 +1,143 @@
+!!! 5
+html
+  head
+    title Is WebRTC ready yet?
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='style.css')
+    link(rel='stylesheet', href='prettify.css')
+    style.
+      td.yes {
+        background: green
+      }
+      td.incomplete {
+        background: yellow
+      }
+      td.no {
+        background: red
+      }
+
+  body
+    .wrap
+      section
+        h1 Is WebRTC Ready yet?
+        
+        table#support
+          tr
+            th Browser
+            th
+              a(href="#peerConn") PeerConnections
+            th
+              a(href="#getUserMedia") getUserMedia
+            th
+              a(href="#mediaConstraints", title="for bandwidth control") mediaConstraints
+            th
+              a(href="#mediaStream") MediaStream API
+            th
+              a(href="#webAudio") WebAudio Integration
+            th
+              a(href="#screenSharing") Screen Sharing
+            th
+              a(href="#reliable") reliable dataChannels
+            th
+              a(href="#unreliable") unreliable dataChannels
+            th
+              a(href="#rebroadcast") Stream re-broadcasting
+            th
+              a(href="#echo") Excellent echo cancellation
+
+          tr
+            th FireFox
+            td.yes
+            td.yes
+            td.yes
+            td.no
+            td.incomplete
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+
+          tr
+            th Chrome
+            td.yes
+            td.yes
+            td.yes
+            td.yes
+            td.yes
+            td.no
+            td.yes
+            td.yes
+            td.no
+            td.no
+
+          tr
+            th Safari
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+          
+          tr
+            th IE
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+          tr
+            th Opera
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+            td.no
+
+      .featureExplanations
+        h3#peerConn PeerConnections
+        p The basic building block for connecting to peers.
+        
+        h3#getUserMedia getUserMedia
+        p The ability to request access to a user's webcam and microphone.
+        
+        h3#mediaConstraints mediaConstraints
+        p The ability to specify restricted video sizes. This is important for bandwidth control.
+        
+        h3#webAudio WebAudio Integration
+        p WebAudio enables processing of raw audio. For WebRTC applications it's important that this capability not only exist, but that it's capable of being used with a MediaStream as a source. 
+
+        h3#screenSharing Screen Sharing
+        p The ability to request access to a MediaStream of the computer screen. This is crucial for feature parity with existing communication solutions.
+        
+        h3#reliable dataChannels
+        p Data channel support comes in two flavors: 
+        #reliable 1. Reliable means they are guaranteed to arrive and arrive in the correct order. 
+        #unreliable 2. Unreliable means that order doesn't matter and dropped messages are acceptable.
+        
+        h3#rebroadcast Stream re-broadcasting
+        p In order to support some of the more interesting topologies for routing data, we need to be able to take a MediaStream object from one peer and add it to another PeerConneciton. Without this, the only way of doing multi-user is a mesh network or a centralized server.
+        
+        h3#echo Excellent echo cancellation
+        p This is the most objective item in this list. But 3 or 4 users should be able to use a service like <a href="https://talky.io">Talky</a> without headphones on and not experience feedback problems.
+
+      footer
+        a#andyet(href='http://andyet.com', target='_blank')
+          img(src='http://andyet.com/images/logo.png', width='40')
+    script(src='prettyprint.js')
+    script(src='http://static.andyet.com/tag.js')
