@@ -1,45 +1,16 @@
-# SimpleWebRTC - World's easiest WebRTC lib
+# iswebrtcready.org
 
-Check out the demo: http://conversat.io
+Promoting WebRTC support through the clever use of a website with words on it.
 
+## Developing on this
 
-## It's so easy:
+It's a static site served by github pages but the html is written in jade but comes with a super simple little watcher script. 
 
-### 1. Some basic html
+Just leave this running and it'll watch for changes on index.jade and complile it ot index.html
 
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <script src="http://static.conversat.io/latest.js"></script> 
-    </head>
-    <body>
-        <div id="localVideo"></div>
-        <div id="remotesVideos"></div>
-    </body>
-</html>
+Just run:
 
 ```
-
-### 1. Create our WebRTC object
-
-```js
-var webrtc = new WebRTC({
-    // the id/element dom element that will hold "our" video
-    localVideoEl: 'localVideo',
-    // the id/element dom element that will hold remote videos
-    remoteVideosEl: 'remotesVideos',
-    // immediately ask for camera access
-    autoRequestMedia: true
-});
-```
-
-### 2. Tell it to join a room when ready
-
-```js
-// we have to wait until it's ready
-webrtc.on('readyToCall', function () {
-    // you can name it anything
-    webrtc.joinRoom('your awesome room name');
-});
+npm i
+node watch.js
 ```
