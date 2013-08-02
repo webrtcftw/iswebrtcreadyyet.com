@@ -37,6 +37,8 @@ html
             th
               a(href="#screenSharing") Screen Sharing
             th
+              a(href="#turn") TURN server support
+            th
               a(href="#reliable") reliable dataChannels
             th
               a(href="#unreliable") unreliable dataChannels
@@ -50,8 +52,9 @@ html
             td.yes
             td.yes
             td.yes
-            td.no
             td.incomplete
+            td.incomplete
+            td.no
             td.no
             td.no
             td.no
@@ -65,7 +68,8 @@ html
             td.yes
             td.yes
             td.yes
-            td.no
+            td.incomplete(title="requires a flag")
+            td.yes
             td.yes
             td.yes
             td.no
@@ -73,6 +77,7 @@ html
 
           tr
             th Safari
+            td.no
             td.no
             td.no
             td.no
@@ -96,8 +101,10 @@ html
             td.no
             td.no
             td.no
+            td.no
           tr
             th Opera
+            td.no
             td.no
             td.no
             td.no
