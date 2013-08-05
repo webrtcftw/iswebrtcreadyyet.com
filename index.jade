@@ -46,6 +46,9 @@ html
               td.no
               td.no
               td.no
+            tr.about
+              th
+              td(colspan="7") The basic building block for connecting to peers.
             tr
               th
                 a(href="#getUserMedia") getUserMedia
@@ -56,6 +59,9 @@ html
               td.no
               td.no
               td.no
+            tr.about
+              th
+              td(colspan="7") The ability to request access to a user's webcam and microphone.
             tr
               th
                 a(href="#mediaConstraints", title="for bandwidth control") mediaConstraints
@@ -66,6 +72,9 @@ html
               td.no
               td.no
               td.no
+            tr.about
+              th
+              td(colspan="7") The ability to specify restricted video sizes. This is important for bandwidth control.
             tr
               th
                 a(href="#turn") TURN server support
@@ -75,7 +84,10 @@ html
               td.no
               td.no
               td.no
-              td.no              
+              td.no
+            tr.about
+              th
+              td(colspan="7") Necessary for NAT traversal, which is a fancy way of saying, "getting around firewalls."
             tr
               th
                 a(href="#mediaStream") MediaStream API
@@ -86,6 +98,9 @@ html
               td.no
               td.no
               td.no
+            tr.about
+              th
+              td(colspan="7")         
             tr
               th
                 a(href="#webAudio") WebAudio Integration
@@ -96,6 +111,9 @@ html
               td.no
               td.no
               td.no
+            tr.about
+              th
+              td(colspan="7") WebAudio enables processing of raw audio. For WebRTC applications it's important that this capability not only exist, but that it's capable of being used with a MediaStream as a source.
             tr
               th
                 a(href="#reliable") reliable dataChannels
@@ -106,6 +124,9 @@ html
               td.no
               td.no
               td.no
+            tr.about
+              th
+              td(colspan="7") Data channel support comes in two flavors: "reliable" means they are guaranteed to arrive and arrive in the correct order, "unreliable" means that order doesn't matter and dropped messages are acceptable.
             tr
               th
                 a(href="#unreliable") unreliable dataChannels
@@ -116,6 +137,9 @@ html
               td.no
               td.no
               td.no
+            tr.about
+              th
+              td(colspan="7") Data channel support comes in two flavors: "reliable" means they are guaranteed to arrive and arrive in the correct order, "unreliable" means that order doesn't matter and dropped messages are acceptable.
             tr
               th
                 a(href="#screenSharing") Screen Sharing
@@ -125,7 +149,10 @@ html
               td.no            
               td.no
               td.no
-              td.no            
+              td.no
+            tr.about
+              th
+              td(colspan="7") The ability to request access to a MediaStream of the computer screen. This is crucial for feature parity with existing communication solutions.         
             tr
               th
                 a(href="#rebroadcast") Stream re-broadcasting
@@ -136,6 +163,9 @@ html
               td.no
               td.no
               td.no
+            tr.about
+              th
+              td(colspan="7") In order to support some of the more interesting topologies for routing data, we need to be able to take a MediaStream object from one peer and add it to another PeerConneciton. Without this, the only way of doing multi-user is a mesh network or a centralized server.
             tr
               th
                 a(href="#echo") Solid interoperability
@@ -145,7 +175,10 @@ html
               td.inc
               td.no
               td.no
-              td.no              
+              td.no
+            tr.about
+              th
+              td(colspan="7") Multiple browsers consistently being able to talk to each other is essential to making WebRTC a true web technology and not just something that makes for a nice demo.
             tr
               th
                 a(href="#echo") Echo cancellation
@@ -156,33 +189,9 @@ html
               td.no
               td.no
               td.no
-
-      .featureExplanations
-        h3#peerConn PeerConnections
-        p The basic building block for connecting to peers.
-        
-        h3#getUserMedia getUserMedia
-        p The ability to request access to a user's webcam and microphone.
-        
-        h3#mediaConstraints mediaConstraints
-        p The ability to specify restricted video sizes. This is important for bandwidth control.
-        
-        h3#webAudio WebAudio Integration
-        p WebAudio enables processing of raw audio. For WebRTC applications it's important that this capability not only exist, but that it's capable of being used with a MediaStream as a source. 
-
-        h3#screenSharing Screen Sharing
-        p The ability to request access to a MediaStream of the computer screen. This is crucial for feature parity with existing communication solutions.
-        
-        h3#reliable dataChannels
-        p Data channel support comes in two flavors: 
-        #reliable 1. Reliable means they are guaranteed to arrive and arrive in the correct order. 
-        #unreliable 2. Unreliable means that order doesn't matter and dropped messages are acceptable.
-        
-        h3#rebroadcast Stream re-broadcasting
-        p In order to support some of the more interesting topologies for routing data, we need to be able to take a MediaStream object from one peer and add it to another PeerConneciton. Without this, the only way of doing multi-user is a mesh network or a centralized server.
-        
-        h3#echo Excellent echo cancellation
-        p This is the most objective item in this list. But 3 or 4 users should be able to use a service like <a href="https://talky.io">Talky</a> without headphones on and not experience feedback problems.
+            tr.about
+              th
+              td(colspan="7") This is the most objective item in this list. But 3 or 4 users should be able to use a service like Talky without headphones on and not experience feedback problems.
 
       footer
         a#andyet(href='http://andyet.com', target='_blank')
