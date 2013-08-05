@@ -35,8 +35,8 @@ html
               th Chrome 28              
               th Nightly            
               th Firefox 22              
+              th IE 10              
               th Safari 7
-              th IE 10
               th Opera 15
             tr 
               th.feature 
@@ -79,11 +79,11 @@ html
               td(colspan="7") The ability to specify restricted video sizes. This is important for bandwidth control.
             tr
               th
-                a(href="#turn") TURN server support
+                a(href="#turn") STUN/TURN support
               td.yes
               td.yes
               td.yes
-              td.no
+              td.inc
               td.no
               td.no
               td.no
@@ -194,5 +194,21 @@ html
             tr.about
               th
               td(colspan="7") This is the most objective item in this list. But 3 or 4 users should be able to use a service like Talky without headphones on and not experience feedback problems.
-
+      section.cl
+        article
+          h2 You can help make WebRTC better for everyone—by using it.
+          p WebRTC is one of the most transformative additions to the web platform, but it's still early days.
+          p There's a big difference between technology that makes for an interesting demo and what's needed for something that could work on par with existing video chat products.
+          p That gap can be closed—and data can help browser developers championing these great features to close it faster.
+          h2 Here's how you can help:
+          p
+            strong Use <a href="http://talky.io">Talky</a> the next time you have need for a web video chat, then submit the feedback form. 
+          p All statistics are collected anonymously and reported publicly on this site.       
+        aside
+          a(href="http://talky.io")
+            img.talky(src="https://talky.io/images/talky.png")
+          h3 Help test WebRTC now
+          p Talky is built entirely on open-source, MIT-licensed <a href="http://simplewebrtc.com">SimpleWebRTC</a> toolkit.
+          p SimpleWebRTC is intended to be fully interoperable with any signaling platform (open source servers like <a href="http://github.com/andyet/signalmaster">SignalMaster</a>, federated protocols like XMPP, and commercial products.)
+          p Teams at Mozilla and Google are actively using Talky to dogfood and improve their WebRTC implementations.      
     script(src='http://static.andyet.com/tag.js')

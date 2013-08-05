@@ -232,17 +232,17 @@ table {
 td {
   vertical-align: top;
 }
-.clearfix:before,
-.clearfix:after {
+.cl:before,
+.cl:after {
   content: "\0020";
   display: block;
   height: 0;
   visibility: hidden;
 }
-.clearfix:after {
+.cl:after {
   clear: both;
 }
-.clearfix {
+.cl {
   zoom: 1;
 }
 article,
@@ -479,17 +479,17 @@ table {
 td {
   vertical-align: top;
 }
-.clearfix:before,
-.clearfix:after {
+.cl:before,
+.cl:after {
   content: "\0020";
   display: block;
   height: 0;
   visibility: hidden;
 }
-.clearfix:after {
+.cl:after {
   clear: both;
 }
-.clearfix {
+.cl {
   zoom: 1;
 }
 * {
@@ -528,10 +528,14 @@ h2 {
   font-weight: 200;
   color: #333;
   font-size: 30px;
-  text-align: center;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   padding: 0 0 10px 0;
-  border-bottom: 1px solid #eee;
+}
+p {
+  margin: 10px 0;
+}
+p + h2 {
+  margin-top: 40px;
 }
 a:link,
 a:visited {
@@ -544,6 +548,10 @@ a:visited {
   -webkit-box-shadow: color 0 2px 10px;
   -moz-box-shadow: rgba(0,0,0,0.05) 0 2px 10px;
   box-shadow: rgba(0,0,0,0.05) 0 2px 10px;
+}
+#support h2 {
+  border-bottom: 1px solid #eee;
+  text-align: center;
 }
 td {
   border: 1px solid #fff;
@@ -600,10 +608,49 @@ th a:visited {
 .no {
   background: #f00;
 }
+section + section {
+  margin-top: 60px;
+}
+article {
+  float: left;
+  width: 60%;
+  box-sizing: border-box;
+}
+aside {
+  float: right;
+  width: 33%;
+  box-sizing: border-box;
+  background: #fafafa;
+  padding: 10px;
+  text-align: center;
+}
+aside h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+aside p {
+  text-align: left;
+  margin: 10px 0;
+  font-size: 13px;
+}
+.talky {
+  width: 100px;
+  margin: 10px auto;
+  display: block;
+}
 @media (max-width: 760px) {
   .wrap {
     width: 320px;
     margin-top: 80px;
+  }
+  article,
+  aside {
+    float: none;
+    width: 100%;
+    padding: 0 20px;
+  }
+  aside {
+    margin-top: 40px;
   }
   body {
     background-size: 200%;
@@ -614,6 +661,7 @@ th a:visited {
     margin-bottom: 30px;
   }
   h2 {
+    font-weight: bold;
     font-size: 22px;
     padding-bottom: 5px;
     margin-bottom: 10px;
