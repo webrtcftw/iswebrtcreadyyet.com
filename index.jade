@@ -5,116 +5,157 @@ html
     meta(charset='utf-8')
     link(rel='stylesheet', href='style.css')
     link(rel='stylesheet', href='prettify.css')
-    style.
-      td.yes {
-        background: green
-      }
-      td.incomplete {
-        background: yellow
-      }
-      td.no {
-        background: red
-      }
-
   body
     .wrap
       section
-        h1 Is WebRTC Ready yet?
-        
-        table#support
-          tr
-            th Browser
-            th
-              a(href="#peerConn") PeerConnections
-            th
-              a(href="#getUserMedia") getUserMedia
-            th
-              a(href="#mediaConstraints", title="for bandwidth control") mediaConstraints
-            th
-              a(href="#mediaStream") MediaStream API
-            th
-              a(href="#webAudio") WebAudio Integration
-            th
-              a(href="#screenSharing") Screen Sharing
-            th
-              a(href="#turn") TURN server support
-            th
-              a(href="#reliable") reliable dataChannels
-            th
-              a(href="#unreliable") unreliable dataChannels
-            th
-              a(href="#rebroadcast") Stream re-broadcasting
-            th
-              a(href="#echo") Excellent echo cancellation
-
-          tr
-            th FireFox
-            td.yes
-            td.yes
-            td.yes
-            td.incomplete
-            td.incomplete
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-
-          tr
-            th Chrome
-            td.yes
-            td.yes
-            td.yes
-            td.yes
-            td.yes
-            td.incomplete(title="requires a flag")
-            td.yes
-            td.yes
-            td.yes
-            td.no
-            td.no
-
-          tr
-            th Safari
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-          
-          tr
-            th IE
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-          tr
-            th Opera
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
-            td.no
+        h1 Is WebRTC ready yet?
+        #support
+          table
+            tr.browsers
+              th 
+              th
+                img(src="https://raw.github.com/paulirish/browser-logos/master/chrome-canary/chrome-canary.png", alt="Chrome Canary", title="Chrome Canary")              
+              th 
+                img(src="https://raw.github.com/paulirish/browser-logos/master/chrome/chrome_256x256.png", alt="Chrome", title="Chrome")
+              th 
+                img(src="https://raw.github.com/paulirish/browser-logos/master/firefox-nightly/firefox-nightly.png", alt="Firefox Nightly", title="Firefox Nightly")
+              th
+                img(src="https://raw.github.com/paulirish/browser-logos/master/firefox/firefox_256x256.png", alt="Firefox", title="Firefox")
+              th
+                img(src="https://raw.github.com/paulirish/browser-logos/master/ie9-10/ie9-10_256x256.png", alt="Internet Explorer", title="Internet Explorer")                
+              th
+                img(src="https://raw.github.com/paulirish/browser-logos/master/safari/safari.png", alt="Safari", title="Safari")
+              th
+                img(src="https://raw.github.com/paulirish/browser-logos/master/opera/opera_256x256.png", alt="Opera", title="Opera")
+            tr.versions
+              th 
+              th Canary
+              th Chrome 28              
+              th Nightly            
+              th Firefox 22              
+              th Safari 7
+              th IE 10
+              th Opera 15
+            tr 
+              th.feature 
+                a(href="#peerConn") PeerConnections
+              td.yes
+              td.yes
+              td.yes
+              td.yes
+              td.no
+              td.no
+              td.no
+            tr
+              th
+                a(href="#getUserMedia") getUserMedia
+              td.yes
+              td.yes
+              td.yes
+              td.yes
+              td.no
+              td.no
+              td.no
+            tr
+              th
+                a(href="#mediaConstraints", title="for bandwidth control") mediaConstraints
+              td.yes
+              td.yes
+              td.yes
+              td.yes
+              td.no
+              td.no
+              td.no
+            tr
+              th
+                a(href="#turn") TURN server support
+              td.yes
+              td.yes
+              td.yes
+              td.no
+              td.no
+              td.no
+              td.no              
+            tr
+              th
+                a(href="#mediaStream") MediaStream API
+              td.yes
+              td.yes
+              td.inc
+              td.inc
+              td.no
+              td.no
+              td.no
+            tr
+              th
+                a(href="#webAudio") WebAudio Integration
+              td.yes
+              td.yes
+              td.inc
+              td.inc
+              td.no
+              td.no
+              td.no
+            tr
+              th
+                a(href="#reliable") reliable dataChannels
+              td.yes
+              td.yes
+              td.no
+              td.no
+              td.no
+              td.no
+              td.no
+            tr
+              th
+                a(href="#unreliable") unreliable dataChannels
+              td.yes
+              td.yes
+              td.no
+              td.no
+              td.no
+              td.no
+              td.no
+            tr
+              th
+                a(href="#screenSharing") Screen Sharing
+              td.inc(title="requires a flag")
+              td.inc(title="requires a flag")
+              td.no
+              td.no            
+              td.no
+              td.no
+              td.no            
+            tr
+              th
+                a(href="#rebroadcast") Stream re-broadcasting
+              td.no
+              td.no
+              td.no
+              td.no
+              td.no
+              td.no
+              td.no
+            tr
+              th
+                a(href="#echo") Solid interoperability
+              td.inc
+              td.inc
+              td.inc
+              td.inc
+              td.no
+              td.no
+              td.no              
+            tr
+              th
+                a(href="#echo") Echo cancellation
+              td.no
+              td.no
+              td.no
+              td.no
+              td.no
+              td.no
+              td.no
 
       .featureExplanations
         h3#peerConn PeerConnections

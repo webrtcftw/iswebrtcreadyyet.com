@@ -5,109 +5,155 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="prettify.css">
-    <style>
-      td.yes {
-        background: green
-      }
-      td.incomplete {
-        background: yellow
-      }
-      td.no {
-        background: red
-      }
-      
-    </style>
   </head>
   <body>
     <div class="wrap">
       <section>
-        <h1>Is WebRTC Ready yet?</h1>
-        <table id="support">
-          <tr>
-            <th>Browser</th>
-            <th><a href="#peerConn">PeerConnections</a></th>
-            <th><a href="#getUserMedia">getUserMedia</a></th>
-            <th><a href="#mediaConstraints" title="for bandwidth control">mediaConstraints</a></th>
-            <th><a href="#mediaStream">MediaStream API</a></th>
-            <th><a href="#webAudio">WebAudio Integration</a></th>
-            <th><a href="#screenSharing">Screen Sharing</a></th>
-            <th><a href="#turn">TURN server support</a></th>
-            <th><a href="#reliable">reliable dataChannels</a></th>
-            <th><a href="#unreliable">unreliable dataChannels</a></th>
-            <th><a href="#rebroadcast">Stream re-broadcasting</a></th>
-            <th><a href="#echo">Excellent echo cancellation</a></th>
-          </tr>
-          <tr>
-            <th>FireFox</th>
-            <td class="yes"></td>
-            <td class="yes"></td>
-            <td class="yes"></td>
-            <td class="incomplete"></td>
-            <td class="incomplete"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-          </tr>
-          <tr>
-            <th>Chrome</th>
-            <td class="yes"></td>
-            <td class="yes"></td>
-            <td class="yes"></td>
-            <td class="yes"></td>
-            <td class="yes"></td>
-            <td title="requires a flag" class="incomplete"></td>
-            <td class="yes"></td>
-            <td class="yes"></td>
-            <td class="yes"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-          </tr>
-          <tr>
-            <th>Safari</th>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-          </tr>
-          <tr>
-            <th>IE</th>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-          </tr>
-          <tr>
-            <th>Opera</th>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-            <td class="no"></td>
-          </tr>
-        </table>
+        <h1>Is WebRTC ready yet?</h1>
+        <div id="support">
+          <table>
+            <tr class="browsers">
+              <th> </th>
+              <th><img src="https://raw.github.com/paulirish/browser-logos/master/chrome-canary/chrome-canary.png" alt="Chrome Canary" title="Chrome Canary"></th>
+              <th> <img src="https://raw.github.com/paulirish/browser-logos/master/chrome/chrome_256x256.png" alt="Chrome" title="Chrome"></th>
+              <th> <img src="https://raw.github.com/paulirish/browser-logos/master/firefox-nightly/firefox-nightly.png" alt="Firefox Nightly" title="Firefox Nightly"></th>
+              <th><img src="https://raw.github.com/paulirish/browser-logos/master/firefox/firefox_256x256.png" alt="Firefox" title="Firefox"></th>
+              <th><img src="https://raw.github.com/paulirish/browser-logos/master/ie9-10/ie9-10_256x256.png" alt="Internet Explorer" title="Internet Explorer"></th>
+              <th><img src="https://raw.github.com/paulirish/browser-logos/master/safari/safari.png" alt="Safari" title="Safari"></th>
+              <th><img src="https://raw.github.com/paulirish/browser-logos/master/opera/opera_256x256.png" alt="Opera" title="Opera"></th>
+            </tr>
+            <tr class="versions">
+              <th> </th>
+              <th>Canary</th>
+              <th>Chrome 28              </th>
+              <th>Nightly            </th>
+              <th>Firefox 22              </th>
+              <th>Safari 7</th>
+              <th>IE 10</th>
+              <th>Opera 15</th>
+            </tr>
+            <tr> 
+              <th class="feature"> <a href="#peerConn">PeerConnections</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr>
+              <th><a href="#getUserMedia">getUserMedia</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr>
+              <th><a href="#mediaConstraints" title="for bandwidth control">mediaConstraints</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr>
+              <th><a href="#turn">TURN server support</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no">             </td>
+            </tr>
+            <tr>
+              <th><a href="#mediaStream">MediaStream API</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr>
+              <th><a href="#webAudio">WebAudio Integration</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr>
+              <th><a href="#reliable">reliable dataChannels</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr>
+              <th><a href="#unreliable">unreliable dataChannels</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr>
+              <th><a href="#screenSharing">Screen Sharing</a></th>
+              <td title="requires a flag" class="inc"></td>
+              <td title="requires a flag" class="inc"></td>
+              <td class="no"></td>
+              <td class="no">           </td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no">           </td>
+            </tr>
+            <tr>
+              <th><a href="#rebroadcast">Stream re-broadcasting</a></th>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr>
+              <th><a href="#echo">Solid interoperability</a></th>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no">             </td>
+            </tr>
+            <tr>
+              <th><a href="#echo">Echo cancellation</a></th>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+          </table>
+        </div>
       </section>
       <div class="featureExplanations">
         <h3 id="peerConn">PeerConnections</h3>
