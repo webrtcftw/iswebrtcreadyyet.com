@@ -77,7 +77,7 @@
               <td colspan="7">The ability to specify restricted video sizes. This is important for bandwidth control.</td>
             </tr>
             <tr>
-              <th><a href="#turn">STUN/TURN support</a></th>
+              <th><a href="#turn">TURN support</a></th>
               <td class="yes"></td>
               <td class="yes"></td>
               <td class="yes"></td>
@@ -88,7 +88,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">Necessary for NAT traversal, which is a fancy way of saying, "getting around firewalls."</td>
+              <td colspan="7">TURN servers are necessary for situations where STUN fails to produce two addressable endpoints. Which is a fancy way of saying, "getting around firewalls."</td>
             </tr>
             <tr>
               <th><a href="#mediaStream">MediaStream API</a></th>
@@ -102,7 +102,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">        </td>
+              <td colspan="7">When you request user media or get media from a peer it's held in a MediaStream object. Having abilitity to add/remove tracks, mute and apply constraints make it possible to do audio processing and control bandwidth consumption.</td>
             </tr>
             <tr>
               <th><a href="#webAudio">WebAudio Integration</a></th>
@@ -200,7 +200,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">This is the most objective item in this list. But 3 or 4 users should be able to use a service like Talky without headphones on and not experience feedback problems.</td>
+              <td colspan="7">This is the most subjective item in this list. But 3 or 4 users should be able to use a service like Talky without headphones on and not experience feedback problems.</td>
             </tr>
           </table>
         </div>
@@ -213,7 +213,7 @@
           <p>That gap can be closed—and data can help browser developers championing these great features to close it faster.</p>
           <h2>Here's how you can help:</h2>
           <p><strong>Use <a href="http://talky.io">Talky</a> the next time you have need for a web video chat, then submit the feedback form. </strong></p>
-          <p>All statistics are collected anonymously and reported publicly on this site.       </p>
+          <p>All statistics are collected anonymously and will be reported publicly on this site.</p>
         </article>
         <aside><a href="http://talky.io"><img src="https://talky.io/images/talky.png" class="talky"></a>
           <h3>Help test WebRTC now</h3>
@@ -224,5 +224,13 @@
       </section>
     </div>
     <script src="http://static.andyet.com/tag.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $('table').delegate('th a', 'click', function () {
+          console.log('click', $(this).parents('tr').next().slideToggle());
+        });
+      });
+    </script>
   </body>
 </html>
