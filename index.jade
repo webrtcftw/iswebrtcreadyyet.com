@@ -1,4 +1,4 @@
-!!! 5
+`!!! 5
 html
   head
     title Is WebRTC ready yet?
@@ -67,23 +67,23 @@ html
             tr
               th
                 a(href="#mediaConstraints", title="for bandwidth control") mediaConstraints
-              td.yes
-              td.yes
-              td.yes
-              td.yes
+              td.inc
+              td.inc
+              td.inc
+              td.no
               td.no
               td.no
               td.no
             tr.about
               th
-              td(colspan="7") The ability to specify restricted video sizes. This is important for bandwidth control.
+              td(colspan="7") The ability to specify restricted video sizes. This is important for bandwidth control. There are two aspects to this. The first is being able to specify constraints when first requesting access. The second is allowing you to apply constraints to an existing MediaStream. 
             tr
               th
                 a(href="#turn") TURN support
               td.yes
               td.yes
               td.yes
-              td.inc
+              td.no
               td.no
               td.no
               td.no
