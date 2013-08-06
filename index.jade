@@ -119,8 +119,8 @@ html
             tr
               th
                 a(href="#reliable") reliable dataChannels
-              td.yes
-              td.yes
+              td.no
+              td.no
               td.no
               td.no
               td.no
@@ -216,6 +216,6 @@ html
     script.
       $(function () {
         $('table').delegate('th a', 'click', function () {
-          console.log('click', $(this).parents('tr').next().slideToggle());
+          $(this).parents('tr').next().slideToggle();
         });
       });

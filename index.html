@@ -120,8 +120,8 @@
             </tr>
             <tr>
               <th><a href="#reliable">reliable dataChannels</a></th>
-              <td class="yes"></td>
-              <td class="yes"></td>
+              <td class="no"></td>
+              <td class="no"></td>
               <td class="no"></td>
               <td class="no"></td>
               <td class="no"></td>
@@ -228,7 +228,7 @@
     <script>
       $(function () {
         $('table').delegate('th a', 'click', function () {
-          console.log('click', $(this).parents('tr').next().slideToggle());
+          $(this).parents('tr').next().slideToggle();
         });
       });
     </script>
