@@ -34,7 +34,7 @@ html
               th Canary
               th Chrome 28              
               th Nightly            
-              th Firefox 22              
+              th Firefox 23              
               th IE 10              
               th Safari 7
               th Opera 15
@@ -67,29 +67,29 @@ html
             tr
               th
                 a(href="#mediaConstraints", title="for bandwidth control") mediaConstraints
-              td.yes
-              td.yes
-              td.yes
-              td.yes
-              td.no
-              td.no
-              td.no
-            tr.about
-              th
-              td(colspan="7") The ability to specify restricted video sizes. This is important for bandwidth control.
-            tr
-              th
-                a(href="#turn") STUN/TURN support
-              td.yes
-              td.yes
-              td.yes
+              td.inc
+              td.inc
               td.inc
               td.no
               td.no
               td.no
+              td.no
             tr.about
               th
-              td(colspan="7") Necessary for NAT traversal, which is a fancy way of saying, "getting around firewalls."
+              td(colspan="7") The ability to specify restricted video sizes. This is important for bandwidth control. There are two aspects to this. The first is being able to specify constraints when first requesting access. The second is allowing you to apply constraints to an existing MediaStream. 
+            tr
+              th
+                a(href="#turn") TURN support
+              td.yes
+              td.yes
+              td.yes
+              td.yes
+              td.no
+              td.no
+              td.no
+            tr.about
+              th
+              td(colspan="7") TURN servers are necessary for situations where STUN fails to produce two addressable endpoints. Which is a fancy way of saying, "getting around firewalls."
             tr
               th
                 a(href="#mediaStream") MediaStream API
@@ -102,7 +102,7 @@ html
               td.no
             tr.about
               th
-              td(colspan="7")         
+              td(colspan="7") When you request user media or get media from a peer it's held in a MediaStream object. Having abilitity to add/remove tracks, mute and apply constraints make it possible to do audio processing and control bandwidth consumption.
             tr
               th
                 a(href="#webAudio") WebAudio Integration
@@ -119,10 +119,10 @@ html
             tr
               th
                 a(href="#reliable") reliable dataChannels
-              td.yes
-              td.yes
               td.no
               td.no
+              td.yes
+              td.yes
               td.no
               td.no
               td.no
@@ -134,8 +134,8 @@ html
                 a(href="#unreliable") unreliable dataChannels
               td.yes
               td.yes
-              td.no
-              td.no
+              td.yes
+              td.yes
               td.no
               td.no
               td.no
@@ -193,7 +193,7 @@ html
               td.no
             tr.about
               th
-              td(colspan="7") This is the most objective item in this list. But 3 or 4 users should be able to use a service like Talky without headphones on and not experience feedback problems.
+              td(colspan="7") This is the most subjective item in this list. But 3 or 4 users should be able to use a service like Talky without headphones on and not experience feedback problems.
       section.cl
         article
           h2 You can help make WebRTC better for everyone—by using it.
@@ -203,7 +203,7 @@ html
           h2 Here's how you can help:
           p
             strong Use <a href="http://talky.io">Talky</a> the next time you have need for a web video chat, then submit the feedback form. 
-          p All statistics are collected anonymously and reported publicly on this site.       
+          p All statistics are collected anonymously and will be reported publicly on this site.
         aside
           a(href="http://talky.io")
             img.talky(src="https://talky.io/images/talky.png")
@@ -212,3 +212,10 @@ html
           p SimpleWebRTC is intended to be fully interoperable with any signaling platform (open source servers like <a href="http://github.com/andyet/signalmaster">SignalMaster</a>, federated protocols like XMPP, and commercial products.)
           p Teams at Mozilla and Google are actively using Talky to dogfood and improve their WebRTC implementations.      
     script(src='http://static.andyet.com/tag.js')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script.
+      $(function () {
+        $('table').delegate('th a', 'click', function () {
+          $(this).parents('tr').next().slideToggle();
+        });
+      });
