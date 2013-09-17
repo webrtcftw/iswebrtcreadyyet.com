@@ -3,46 +3,76 @@
 
 
   $.getJSON('/feedback-data.json', function(data) {
+    var getMetricValue = function($el) {
+      var browser = $el.attr('data-browser');
+      var metricName = $el.attr('data-metric');
+      var unit = $el.attr('data-metric-unit');
+      var animate = !$el.attr('data-no-animate')
+
+      var datapoint = data[browser][metricName];
+      
+      var metric = {
+        value: null,
+        animate: animate,
+        percentage: false
+      }
+      
+      //Shortcut overall/browser count
+      if (metricName === 'count') metric.value = datapoint
+      if (unit === 'count') metric.value = datapoint.count;
+
+      if (unit === 'percentage') {
+        metric.percentage = true;
+        metric.value = datapoint.percentage
+      }
+
+      if (unit === 'percentage-inverted') {
+        metric.percentage = true;
+        metric.value = 100 - datapoint.percentage;
+      }
+
+      console.log(metric)
+      return metric
+    }
 
     $('.rating').each(function() {
       var $el = $(this);
-      var browser = $el.attr('data-browser');
-      var metric = $el.attr('data-metric');
-      var unit = $el.attr('data-metric-unit');
-      
-      var score = Math.floor(parseFloat(data[browser][metric][unit]));
+      var metric = getMetricValue($el)
       var current = 0;
       
+      if (!metric.animate) {
+        if (metric.percentage) {
+          $el.text(metric.value+'%');
+        } else {
+          $el.text(metric.value);
+        }
+        return;
+      }
+
       var interval = setInterval(function() {
         current += 1;
-        $el.text(current+'%');
-        if (current >= score) clearInterval(interval);
-      }, score/animationTime)
+        if (metric.percentage) {
+          $el.text(current+'%');
+        } else {
+          $el.text(current);
+        }
+
+        if (current >= metric.value) clearInterval(interval);
+      }, metric.value/animationTime)
     });
 
-    $('.report-card-browser').each(function() {
-      var $browser = $(this);
-      var browser = $(this).attr('data-browser');
+    $('.bar-chart').each(function() {
+      var $el = $(this);
+      var metric = getMetricValue($el);
+      var $bar = $el.find('.bar-chart-bar');
       
-      $browser.find('.bar-chart').each(function() {
-        var metricName = $(this).attr('data-metric');
-        var metric = data[browser][metricName];
-        var unit = $(this).attr('data-metric-unit');
-
-        if ( unit === 'percentage' ) {
-          $(this).find('.bar-chart-bar').animate({
-            width: metric.percentage
-          }, animationTime);
-        }
-
-        if ( unit === 'percentage-inverted') {
-          var percentage = parseFloat(metric.percentage);
-          var inverted = 100 - percentage;
-          $(this).find('.bar-chart-bar').animate({
-            width: inverted+'%'
-          }, animationTime);
-        }
-      });
+      if (metric.animate) {
+        $bar.animate({
+          width: metric.value+'%'
+        }, animationTime);
+      } else {
+        $bar.css({ width: metric.value+'%' });
+      }
     });
   })
 })()

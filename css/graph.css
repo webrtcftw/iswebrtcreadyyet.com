@@ -2,21 +2,52 @@
 /* line 1 : /Applications/LiveReload.app/Contents/Resources/Stylus.lrplugin/node_modules/stylus/lib/functions/index.styl */
 
 /* line 1 : /Users/latentflip/Projects/andyet/iswebrtcreadyyet.com/css/graph.styl */
+#feedback > h3 {
+  text-align: center;
+}
+
+/* line 4 : /Users/latentflip/Projects/andyet/iswebrtcreadyyet.com/css/graph.styl */
+.report-card-browser {
+  margin-top: 3em;
+}
+
+/* line 7 : /Users/latentflip/Projects/andyet/iswebrtcreadyyet.com/css/graph.styl */
+.report-card-browser h3 img {
+  width: 2em;
+  position: relative;
+  bottom: 0.15em;
+  padding-right: 0.3em;
+}
+
+/* line 13 : /Users/latentflip/Projects/andyet/iswebrtcreadyyet.com/css/graph.styl */
+
+/* line 14 : /Users/latentflip/Projects/andyet/iswebrtcreadyyet.com/css/graph.styl */
+.report-card-section h4 {
+  margin-bottom: 0.5em;
+}
+
+/* line 17 : /Users/latentflip/Projects/andyet/iswebrtcreadyyet.com/css/graph.styl */
 .bar-chart {
   width: 100%;
 }
 
-/* line 4 : /Users/latentflip/Projects/andyet/iswebrtcreadyyet.com/css/graph.styl */
+/* line 19 : /Users/latentflip/Projects/andyet/iswebrtcreadyyet.com/css/graph.styl */
+.bar-chart .bar-chart-background,
+.bar-chart .bar-chart-bar {
+  display: inline-block;
+  height: 1.2em;
+}
+
+/* line 23 : /Users/latentflip/Projects/andyet/iswebrtcreadyyet.com/css/graph.styl */
 .bar-chart .bar-chart-background {
+  width: 100%;
   background: #f00;
-  height: 20px;
   position: relative;
 }
 
-/* line 9 : /Users/latentflip/Projects/andyet/iswebrtcreadyyet.com/css/graph.styl */
+/* line 28 : /Users/latentflip/Projects/andyet/iswebrtcreadyyet.com/css/graph.styl */
 .bar-chart .bar-chart-bar {
-  background: #0f0;
-  height: 20px;
+  background: #32cd32;
   position: absolute;
   top: 0;
   width: 0%;

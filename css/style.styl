@@ -4,6 +4,7 @@
 // style.styl
 @import _define
 @import _reset
+@import graph
 
 *
   -webkit-box-sizing: border-box
@@ -53,7 +54,7 @@ p + h2
 a:link, a:visited
   color: #12ACEF
 
-#support
+.card
   border: 1px solid #eee
   margin: 20px auto
   padding: 20px 40px 40px 40px
@@ -62,6 +63,9 @@ a:link, a:visited
   h2
     border-bottom: 1px solid #eee
     text-align: center
+
+.card + .card
+  margin-top: 40px
 
 td
   border: 1px solid #fff
@@ -109,10 +113,10 @@ th
     cursor: help
 
 .yes
-  background: green
+  background: limegreen
 
 .inc
-  background: yellow
+  background: gold
 
 .no
   background: red
