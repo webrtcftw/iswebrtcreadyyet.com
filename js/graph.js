@@ -1,7 +1,6 @@
 (function() {
   var animationTime = 500;
 
-
   $.getJSON('/feedback-data.json', function(data) {
     var getMetricValue = function($el) {
       var browser = $el.attr('data-browser');
@@ -31,48 +30,61 @@
         metric.value = 100 - datapoint.percentage;
       }
 
-      console.log(metric)
       return metric
     }
 
-    $('.rating').each(function() {
-      var $el = $(this);
-      var metric = getMetricValue($el)
-      var current = 0;
-      
-      if (!metric.animate) {
-        if (metric.percentage) {
-          $el.text(metric.value+'%');
-        } else {
-          $el.text(metric.value);
-        }
-        return;
-      }
-
-      var interval = setInterval(function() {
-        current += 1;
-        if (metric.percentage) {
-          $el.text(current+'%');
-        } else {
-          $el.text(current);
+    var runAnimation = function() {
+      $('.rating').each(function() {
+        var $el = $(this);
+        var metric = getMetricValue($el)
+        var current = 0;
+        
+        if (!metric.animate) {
+          if (metric.percentage) {
+            $el.text(metric.value+'%');
+          } else {
+            $el.text(metric.value);
+          }
+          return;
         }
 
-        if (current >= metric.value) clearInterval(interval);
-      }, metric.value/animationTime)
-    });
+        var interval = setInterval(function() {
+          current += 1;
+          if (metric.percentage) {
+            $el.text(current+'%');
+          } else {
+            $el.text(current);
+          }
 
-    $('.bar-chart').each(function() {
-      var $el = $(this);
-      var metric = getMetricValue($el);
-      var $bar = $el.find('.bar-chart-bar');
-      
-      if (metric.animate) {
-        $bar.animate({
-          width: metric.value+'%'
-        }, animationTime);
-      } else {
-        $bar.css({ width: metric.value+'%' });
+          if (current >= metric.value) clearInterval(interval);
+        }, metric.value/animationTime)
+      });
+
+      $('.bar-chart').each(function() {
+        var $el = $(this);
+        var metric = getMetricValue($el);
+        var $bar = $el.find('.bar-chart-bar');
+        
+        if (metric.animate) {
+          $bar.animate({
+            width: metric.value+'%'
+          }, animationTime);
+        } else {
+          $bar.css({ width: metric.value+'%' });
+        }
+      });
+    }
+
+    window.scrollCheck = function() {
+      var feedbackTop = $('#feedback')[0].offsetTop;
+      var pageTop = window.pageYOffset;
+      var pageHeight = $(window).innerHeight();
+      if (pageTop + pageHeight/2 > feedbackTop) {
+        $(document).off('scroll', scrollCheck)
+        runAnimation()
       }
-    });
+    };
+    $(document).on('scroll', scrollCheck);
+    scrollCheck()
   })
 })()
