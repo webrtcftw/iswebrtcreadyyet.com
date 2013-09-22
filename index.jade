@@ -194,6 +194,55 @@ html
             tr.about
               th
               td(colspan="7") This is the most subjective item in this list. But 3 or 4 users should be able to use a service like Talky without headphones on and not experience feedback problems.
+        p <small>See an error? This site open source on Github, please let us know by <a href="https://github.com/andyet/iswebrtcreadyyet.com/issues">opening an issue</a>.</small>
+
+
+        #feedback.card
+          h2 Recent conversation quality
+          h3
+            | Human reported feedback based on the last 
+            span.rating(data-browser='overall', data-metric='count', data-no-animate="true")
+            |  conversations.
+          //
+            h2 Current Overall Score 
+              span.rating(data-browser='overall', data-metric='highQuality', data-metric-unit='percentage')
+          
+          each browser in ['Chrome', 'Firefox']
+            .report-card-browser
+              h3
+                img(src = "images/"+browser.toLowerCase()+".png")
+                = browser
+
+              .report-card-section
+                h4
+                  | High Quality: 
+                  span.rating(data-browser=browser, data-metric='highQuality', data-metric-unit='percentage')
+                .bar-chart(data-browser=browser, data-metric='highQuality', data-metric-unit='percentage')
+                  .bar-chart-background
+                    .bar-chart-bar
+
+              .report-card-section
+                h4 
+                  | Good video: 
+                  span.rating(data-browser=browser, data-metric='videoProblems', data-metric-unit='percentage-inverted')
+                .bar-chart(data-browser=browser, data-metric='videoProblems', data-metric-unit='percentage-inverted')
+                  .bar-chart-background
+                    .bar-chart-bar
+
+              .report-card-section
+                h4 
+                  | Good audio: 
+                  span.rating(data-browser=browser, data-metric='audioProblems', data-metric-unit='percentage-inverted')
+                .bar-chart(data-browser=browser, data-metric='audioProblems', data-metric-unit='percentage-inverted')
+                  .bar-chart-background
+                    .bar-chart-bar
+              
+        p <small>This data gathered from <a href="https://talky.io/feedback">the feedback form on Talky</a>.</small>
+
+
+
+
+
       section.cl
         article
           h2 You can help make WebRTC better for everyone—by using it.
@@ -213,6 +262,8 @@ html
           p Teams at Mozilla and Google are actively using Talky to dogfood and improve their WebRTC implementations.      
     script(src='http://static.andyet.com/tag.js')
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+
+    script(src='js/graph.js')
     script.
       $(function () {
         $('table').delegate('th a', 'click', function () {

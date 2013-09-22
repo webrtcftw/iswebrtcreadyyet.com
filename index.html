@@ -204,6 +204,83 @@
             </tr>
           </table>
         </div>
+        <p><small>See an error? This site open source on Github, please let us know by <a href="https://github.com/andyet/iswebrtcreadyyet.com/issues">opening an issue</a>.</small></p>
+        <div id="feedback" class="card">
+          <h2>Recent conversation quality</h2>
+          <h3>Human reported feedback based on the last <span data-browser="overall" data-metric="count" data-no-animate="true" class="rating"></span> conversations.</h3>
+          <!--
+          <h2>Current Overall Score <span data-browser="overall" data-metric="highQuality" data-metric-unit="percentage" class="rating"></span></h2>
+          -->
+          <div class="report-card-browser">
+            <h3><img src="images/chrome.png">Chrome
+            </h3>
+            <div class="report-card-section">
+              <h4>High Quality: <span data-browser="Chrome" data-metric="highQuality" data-metric-unit="percentage" class="rating"></span></h4>
+              <div data-browser="Chrome" data-metric="highQuality" data-metric-unit="percentage" class="bar-chart">
+                <div class="bar-chart-background">
+                  <div class="bar-chart-bar"></div>
+                </div>
+              </div>
+            </div>
+            <div class="report-card-section">
+              <h4>
+                 
+                Good video: <span data-browser="Chrome" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="rating"></span>
+              </h4>
+              <div data-browser="Chrome" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="bar-chart">
+                <div class="bar-chart-background">
+                  <div class="bar-chart-bar"></div>
+                </div>
+              </div>
+            </div>
+            <div class="report-card-section">
+              <h4>
+                 
+                Good audio: <span data-browser="Chrome" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="rating"></span>
+              </h4>
+              <div data-browser="Chrome" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="bar-chart">
+                <div class="bar-chart-background">
+                  <div class="bar-chart-bar"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="report-card-browser">
+            <h3><img src="images/firefox.png">Firefox
+            </h3>
+            <div class="report-card-section">
+              <h4>High Quality: <span data-browser="Firefox" data-metric="highQuality" data-metric-unit="percentage" class="rating"></span></h4>
+              <div data-browser="Firefox" data-metric="highQuality" data-metric-unit="percentage" class="bar-chart">
+                <div class="bar-chart-background">
+                  <div class="bar-chart-bar"></div>
+                </div>
+              </div>
+            </div>
+            <div class="report-card-section">
+              <h4>
+                 
+                Good video: <span data-browser="Firefox" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="rating"></span>
+              </h4>
+              <div data-browser="Firefox" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="bar-chart">
+                <div class="bar-chart-background">
+                  <div class="bar-chart-bar"></div>
+                </div>
+              </div>
+            </div>
+            <div class="report-card-section">
+              <h4>
+                 
+                Good audio: <span data-browser="Firefox" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="rating"></span>
+              </h4>
+              <div data-browser="Firefox" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="bar-chart">
+                <div class="bar-chart-background">
+                  <div class="bar-chart-bar"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p><small>This data gathered from <a href="https://talky.io/feedback">the feedback form on Talky</a>.</small></p>
       </section>
       <section class="cl">
         <article>
@@ -225,6 +302,7 @@
     </div>
     <script src="http://static.andyet.com/tag.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="js/graph.js"></script>
     <script>
       $(function () {
         $('table').delegate('th a', 'click', function () {
