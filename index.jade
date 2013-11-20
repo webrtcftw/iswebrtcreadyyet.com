@@ -32,12 +32,12 @@ html
             tr.versions
               th
               th Canary
-              th Chrome 29
+              th Chrome 31
               th Nightly
               th Firefox 25
               th IE
               th Safari
-              th Opera
+              th Opera 18
             tr 
               th.feature 
                 a(href="#peerConn") PeerConnections
@@ -47,7 +47,7 @@ html
               td.yes
               td.no
               td.no
-              td.no
+              td.yes
             tr.about
               th
               td(colspan="7") The basic building block for connecting to peers.
@@ -60,7 +60,7 @@ html
               td.yes
               td.no
               td.no
-              td.no
+              td.yes
             tr.about
               th
               td(colspan="7") The ability to request access to a user's webcam and microphone.
@@ -73,7 +73,7 @@ html
               td.no
               td.no
               td.no
-              td.no
+              td.inc
             tr.about
               th
               td(colspan="7") The ability to specify restricted video sizes. This is important for bandwidth control. There are two aspects to this. The first is being able to specify constraints when first requesting access. The second is allowing you to apply constraints to an existing MediaStream. 
@@ -86,7 +86,7 @@ html
               td.yes
               td.no
               td.no
-              td.no
+              td.yes
             tr.about
               th
               td(colspan="7") TURN servers are necessary for situations where STUN fails to produce two addressable endpoints. Which is a fancy way of saying, "getting around firewalls."
@@ -99,7 +99,7 @@ html
               td.inc
               td.no
               td.no
-              td.no
+              td.yes
             tr.about
               th
               td(colspan="7") When you request user media or get media from a peer it's held in a MediaStream object. Having the ability to add/remove tracks, mute, and apply constraints makes it possible to do audio processing and control bandwidth consumption.
@@ -112,7 +112,7 @@ html
               td.yes
               td.no
               td.no
-              td.no
+              td.yes
             tr.about
               th
               td(colspan="7") WebAudio enables processing of raw audio. For WebRTC applications it's important that this capability not only exist, but that it's capable of being used with a MediaStream as a source.
@@ -120,12 +120,12 @@ html
               th
                 a(href="#reliable") reliable dataChannels
               td.yes
-              td.no
               td.yes
               td.yes
+              td.yes
               td.no
               td.no
-              td.no
+              td.yes
             tr.about
               th
               td(colspan="7") Data channel support comes in two flavors: "reliable" means they are guaranteed to arrive and arrive in the correct order, "unreliable" means that order doesn't matter and dropped messages are acceptable.
@@ -138,7 +138,7 @@ html
               td.yes
               td.no
               td.no
-              td.no
+              td.yes
             tr.about
               th
               td(colspan="7") Data channel support comes in two flavors: "reliable" means they are guaranteed to arrive and arrive in the correct order, "unreliable" means that order doesn't matter and dropped messages are acceptable.
@@ -148,7 +148,7 @@ html
               td.inc(title="requires a flag")
               td.inc(title="requires a flag")
               td.no
-              td.no            
+              td.no
               td.no
               td.no
               td.no
@@ -177,7 +177,7 @@ html
               td.inc
               td.no
               td.no
-              td.no
+              td.inc
             tr.about
               th
               td(colspan="7") Multiple browsers consistently being able to talk to each other is essential to making WebRTC a true web technology and not just something that makes for a nice demo.
