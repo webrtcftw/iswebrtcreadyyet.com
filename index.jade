@@ -1,10 +1,15 @@
 !!! 5
-html
+html(lang="en")
   head
     title Is WebRTC ready yet?
-    meta(charset='utf-8')
-    meta(name="viewport", content="width=device-width,initial-scale=1.0,maximum-scale=1.0")
+    
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="description", content="WebRTC, Talky, WebAudio, SimpleWebRTC")
+
     link(rel='stylesheet', href='css/style.css')
+
   body
     .wrap
       section
@@ -238,10 +243,6 @@ html
               
         p <small>This data gathered from the feedback form on <a href="https://talky.io">Talky</a>.</small>
 
-
-
-
-
       section.cl
         article
           h2 You can help make WebRTC better for everyone—by using it.
@@ -259,6 +260,7 @@ html
           p Talky is built entirely on open-source, MIT-licensed <a href="http://simplewebrtc.com">SimpleWebRTC</a> toolkit.
           p SimpleWebRTC is intended to be fully interoperable with any signaling platform (open source servers like <a href="http://github.com/andyet/signalmaster">SignalMaster</a>, federated protocols like XMPP, and commercial products.)
           p Teams at Mozilla and Google are actively using Talky to dogfood and improve their WebRTC implementations.      
+    
     script(src='http://static.andyet.com/tag.js')
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
 
