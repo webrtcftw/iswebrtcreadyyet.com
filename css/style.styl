@@ -1,10 +1,7 @@
-@import _define
-
 // style.styl
-@import _define
-@import graph
 
 @import base
+@import graph
 
 .card
   border: 1px solid #eee
@@ -73,49 +70,30 @@ th
 .no
   background: red
 
-section + section
-  margin-top: 60px
-
-article
-  float: left
-  width: 60%
-  box-sizing: border-box
-
-aside
-  float: right
-  width: 33%
-  box-sizing: border-box
-  background: #fafafa
-  padding: 10px
-  text-align: center
-
-  h3
-    font-size: 16px
-    margin-bottom: 10px
-
-  p
-    text-align: left
-    margin: 10px 0 
-    font-size: 13px
-
-.talky
-  width: 100px
-  margin: 10px auto
-  display: block
-
-
-@media (max-width: 760px)
-  .wrap
-    width: 90%
-    margin-top: 80px
-
-  article, aside
-    float: none
-    width: 100%
-    padding: 0 20px
+.help
+  article
+    float: left
+    width: 60%
 
   aside
-    margin-top: 40px
+    float: right
+    width: 33%
+    background: lighten($gray-lighter, 70%)
+    padding: 1.25em
+    text-align: center
+    font-size: .8125em
+
+
+@media (max-width: 48em)
+
+  .help
+
+    article, aside
+      float: none
+      width: 100%
+
+    aside
+      margin-top: 40px
 
   .browsers img
     width: 24px
@@ -132,8 +110,3 @@ aside
 
   #support
     padding: 10px
-
-
-@media (max-width: 400px)
-  .wrap
-    width: 320px

@@ -1,37 +1,3 @@
-#feedback > h3 {
-  text-align: center;
-}
-.report-card-browser {
-  margin-top: 3em;
-}
-.report-card-browser h3 img {
-  width: 2em;
-  position: relative;
-  bottom: 0.15em;
-  padding-right: 0.3em;
-}
-.report-card-section h4 {
-  margin-bottom: 0.5em;
-}
-.bar-chart {
-  width: 100%;
-}
-.bar-chart .bar-chart-background,
-.bar-chart .bar-chart-bar {
-  display: inline-block;
-  height: 1.2em;
-}
-.bar-chart .bar-chart-background {
-  width: 100%;
-  background: #f00;
-  position: relative;
-}
-.bar-chart .bar-chart-bar {
-  background: #32cd32;
-  position: absolute;
-  top: 0;
-  width: 0%;
-}
 /*
 * Base
 */
@@ -104,7 +70,7 @@ a:hover {
   color: #0d8ac1;
 }
 .content {
-  margin: 8em auto 0;
+  margin: 8.5em auto 0;
 }
 section {
   padding-bottom: 1.875em;
@@ -131,6 +97,9 @@ section:last-of-type {
   background-size: contain;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE5NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczpza2V0Y2g9Imh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaC9ucyI+PHRpdGxlPnRhbGt5PC90aXRsZT48ZyBza2V0Y2g6dHlwZT0iTVNQYWdlIiBmaWxsPSJub25lIj48cGF0aCBkPSJNOS43NDcgMTUwLjgxN3YtNDEuNTc4aC05Ljc0N3YtMTUuNTU0aDkuNzQ3di0yMS42ODVoMTcuNnYyMS42ODVoMjAuNjU0djE1LjU1NGgtMjAuNjU0djM4LjczN2MwIDcuMDI5IDMuNDkgOS44NzEgOS40NTUgOS44NzEgMy45MjcgMCA3LjQxOC0uODk4IDEwLjkwOC0yLjY5MnYxNC44MDdjLTQuMzYzIDIuNTQyLTkuMzA5IDQuMDM4LTE1Ljg1NCA0LjAzOC0xMi45NDUgMC0yMi4xMDktNS44MzUtMjIuMTA5LTIzLjE4M3ptOTQuNzE4IDIxLjUzMnYtOS43NDRjLTUuMjYxIDYuNDQ2LTEzLjI5OSAxMS4zOTQtMjQuOTkgMTEuMzk0LTE0LjYxNCAwLTI3LjQ3NS04LjU0Ni0yNy40NzUtMjQuNDM0di0uMzAxYzAtMTcuNTM5IDEzLjMtMjUuOTMzIDMxLjI3NC0yNS45MzMgOS4zNTMgMCAxNS4zNDUgMS4zNDcgMjEuMzM1IDMuMjk1di0xLjQ5OWMwLTEwLjk0My02LjcyMy0xNi45MzktMTguOTk4LTE2LjkzOS04LjYyMyAwLTE1LjA1MyAxLjk0OS0yMi4wNjcgNC45NDhsLTQuODIyLTE0LjU0M2M4LjQ3Ni0zLjg5NSAxNi44MDYtNi41OTUgMjkuMzc0LTYuNTk1IDIyLjc5OCAwIDMzLjkwNCAxMi4yOTIgMzMuOTA0IDMzLjQzdjQ2LjkyMmgtMTcuNTM2di0uMDAyem0xLjUzNS0zMy4yMzhjLTQuNjEyLTEuNzc4LTExLjAwOC0zLjExMi0xNy45OTktMy4xMTItMTEuMzA1IDAtMTcuOTk5IDQuNTk0LTE3Ljk5OSAxMi4xNDd2LjI5N2MwIDcuNDA2IDYuNjk0IDExLjU1NiAxNS4xNzQgMTEuNTU2IDExLjkgMCAyMC44MjYtNi42NjcgMjAuODI2LTE2LjQ0NmwtLjAwMS00LjQ0M3ptMjkuMDAxLTc2LjExMmgxOHYxMDloLTE4di0xMDl6bTMxIDBoMTcuNjM2djY1LjEwMmwzMS45MTktMzQuOTRoMjEuNDIzbC0zMC42MDUgMzIuMTAxIDMxLjYyNyA0Ni43MzdoLTIwLjQwNGwtMjMuMTc0LTM0LjA0NC0xMC43ODUgMTEuNDk2djIyLjU0NmgtMTcuNjM3di0xMDguOTk4em03Ny44NzEgMTI4LjIzMWw2LjA1Mi0xMy40MTZjMy4yNDggMS43ODggNi43OSAyLjk4MSAxMC40OCAyLjk4MSA1LjAxOSAwIDguMTE4LTIuMjM2IDExLjA3LTkuMDkzbC0zMi40NzItNzguNzAzaDE5LjA0bDIyLjE0IDU4LjQzMiAyMC4yMjMtNTguNDMyaDE4LjU5NmwtMzAuOTk0IDgwLjk0Yy02LjIgMTYuMDk4LTEzLjEzNiAyMi4wNi0yNS42ODMgMjIuMDYtNy41MjguMDAxLTEyLjk5LTEuNzg3LTE4LjQ1Mi00Ljc2OXoiIGlkPSJTaGFwZSIgZmlsbD0iIzMxQThERiIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCIvPjxwYXRoIGQ9Ik0yODAuMTk4LjAyMWMtMjMuNjMxLS43MjctNDEuNjYgMTcuMTA0LTQyLjMxIDM5LjI5OGwtLjAxNS4yODljLS4yMTEgNy40MDMgMS41MzggMTQuNDEyIDQuODQ2IDIwLjQ4OC0uMjI2IDUuNjU0LTUuMTQxIDEzLjg5Ny0xMi43MTkgMTkuOTc2IDE2LjMwNiAyLjg5NyAyNC4wMy0yLjg0NiAyOC43NTctMy45OTUgNS4zNzkgMy4xMjcgMTEuODQxIDQuNjg3IDE4Ljc1NSA0LjkwMiAyMy43NzcuNzM0IDQxLjgxMi0xNy4wOTQgNDIuNDY0LTM5LjE0MWwuMDA2LS4zMDNjLjY0Ni0yMi4xODQtMTYuMTczLTQwLjc4OC0zOS43ODQtNDEuNTE0em0xOC42NTIgMzkuNjMxbC0yNC40MTggMjMuMzA2Yy0xLjc5MiAxLjcwMy0zLjQ5MiAxLjI3MS0zLjc5NC0uOTYybC01LjYtNDEuNTM2Yy0uMzAyLTIuMjQgMS4yMjYtMy4xMDggMy40MDEtMS45NDNsMjkuNzA4IDE1LjkyNmMyLjE2MSAxLjE2MSAyLjQ4MSAzLjUwNy43MDMgNS4yMDl6IiBmaWxsPSIjRTkxMjg5IiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIi8+PC9nPjwvc3ZnPg==");
 }
+.talky-logo:hover {
+  opacity: 0.7;
+}
 @media screen and (max-width: 31.25em) {
   h1 {
     font-size: 2.2em;
@@ -151,13 +120,45 @@ section:last-of-type {
     width: 55%;
   }
 }
+#feedback > h3 {
+  text-align: center;
+}
+.report-card-browser {
+  margin-top: 3em;
+}
+.report-card-browser h3 img {
+  width: 2em;
+  position: relative;
+  bottom: 0.15em;
+  padding-right: 0.3em;
+}
+.report-card-section h4 {
+  margin-bottom: 0.5em;
+}
+.bar-chart {
+  width: 100%;
+}
+.bar-chart .bar-chart-background,
+.bar-chart .bar-chart-bar {
+  display: inline-block;
+  height: 1.2em;
+}
+.bar-chart .bar-chart-background {
+  width: 100%;
+  background: #f00;
+  position: relative;
+}
+.bar-chart .bar-chart-bar {
+  background: #32cd32;
+  position: absolute;
+  top: 0;
+  width: 0%;
+}
 .card {
   border: 1px solid #eee;
   margin: 20px auto;
   padding: 20px 40px 40px 40px;
-  -webkit-box-shadow: color 0 2px 10px;
-  -moz-box-shadow: rgba(0,0,0,0.05) 0 2px 10px;
-  box-shadow: rgba(0,0,0,0.05) 0 2px 10px;
+  shadow: rgba(0,0,0,0.05) 0 2px 10px;
 }
 .card h2 {
   border-bottom: 1px solid #eee;
@@ -221,48 +222,25 @@ th a:visited {
 .no {
   background: #f00;
 }
-section + section {
-  margin-top: 60px;
-}
-article {
+.help article {
   float: left;
   width: 60%;
-  box-sizing: border-box;
 }
-aside {
+.help aside {
   float: right;
   width: 33%;
-  box-sizing: border-box;
-  background: #fafafa;
-  padding: 10px;
+  background: #f8f9fa;
+  padding: 1.25em;
   text-align: center;
+  font-size: 0.8125em;
 }
-aside h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-aside p {
-  text-align: left;
-  margin: 10px 0;
-  font-size: 13px;
-}
-.talky {
-  width: 100px;
-  margin: 10px auto;
-  display: block;
-}
-@media (max-width: 760px) {
-  .wrap {
-    width: 90%;
-    margin-top: 80px;
-  }
-  article,
-  aside {
+@media (max-width: 48em) {
+  .help article,
+  .help aside {
     float: none;
     width: 100%;
-    padding: 0 20px;
   }
-  aside {
+  .help aside {
     margin-top: 40px;
   }
   .browsers img {
@@ -280,10 +258,5 @@ aside p {
   }
   #support {
     padding: 10px;
-  }
-}
-@media (max-width: 400px) {
-  .wrap {
-    width: 320px;
   }
 }
