@@ -1,9 +1,324 @@
-<!DOCTYPE html><html><head><title>Is WebRTC ready yet?</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/prettify.css"></head><body><div class="wrap"><section><h1>Is WebRTC ready yet?</h1><div id="support" class="card"><h2>Browser support scorecard</h2><table><tr class="browsers"><th> </th><th><img src="images/canary.png" alt="Chrome Canary" title="Chrome Canary"></th><th> <img src="images/chrome.png" alt="Chrome" title="Chrome"></th><th> <img src="images/nightly.png" alt="Firefox Nightly" title="Firefox Nightly"></th><th><img src="images/firefox.png" alt="Firefox" title="Firefox"></th><th><img src="images/ie.png" alt="Internet Explorer" title="Internet Explorer"></th><th><img src="images/safari.png" alt="Safari" title="Safari"></th><th><img src="images/opera.png" alt="Opera" title="Opera"></th></tr><tr class="versions"><th></th><th>Canary</th><th>Chrome 31</th><th>Nightly</th><th>Firefox 25</th><th>IE</th><th>Safari</th><th>Opera 18</th></tr><tr> <th class="feature"> <a href="#peerConn">PeerConnections</a></th><td class="yes"></td><td class="yes"></td><td class="yes"></td><td class="yes"></td><td class="no"></td><td class="no"></td><td class="yes"></td></tr><tr class="about"><th></th><td colspan="7">The basic building block for connecting to peers.</td></tr><tr><th><a href="#getUserMedia">getUserMedia</a></th><td class="yes"></td><td class="yes"></td><td class="yes"></td><td class="yes"></td><td class="no"></td><td class="no"></td><td class="yes"></td></tr><tr class="about"><th></th><td colspan="7">The ability to request access to a user's webcam and microphone.</td></tr><tr><th><a href="#mediaConstraints" title="for bandwidth control">mediaConstraints</a></th><td class="inc"></td><td class="inc"></td><td class="inc"></td><td class="no"></td><td class="no"></td><td class="no"></td><td class="inc"></td></tr><tr class="about"><th></th><td colspan="7">The ability to specify restricted video sizes. This is important for bandwidth control. There are two aspects to this. The first is being able to specify constraints when first requesting access. The second is allowing you to apply constraints to an existing MediaStream. </td></tr><tr><th><a href="#turn">TURN support</a></th><td class="yes"></td><td class="yes"></td><td class="yes"></td><td class="yes"></td><td class="no"></td><td class="no"></td><td class="yes"></td></tr><tr class="about"><th></th><td colspan="7">TURN servers are necessary for situations where STUN fails to produce two addressable endpoints. Which is a fancy way of saying, "getting around firewalls."</td></tr><tr><th><a href="#mediaStream">MediaStream API</a></th><td class="yes"></td><td class="yes"></td><td class="inc"></td><td class="inc"></td><td class="no"></td><td class="no"></td><td class="yes"></td></tr><tr class="about"><th></th><td colspan="7">When you request user media or get media from a peer it's held in a MediaStream object. Having the ability to add/remove tracks, mute, and apply constraints makes it possible to do audio processing and control bandwidth consumption.</td></tr><tr><th><a href="#webAudio">WebAudio Integration</a></th><td class="yes"></td><td class="yes"></td><td class="yes"></td><td class="yes"></td><td class="no"></td><td class="no"></td><td class="yes"></td></tr><tr class="about"><th></th><td colspan="7">WebAudio enables processing of raw audio. For WebRTC applications it's important that this capability not only exist, but that it's capable of being used with a MediaStream as a source.</td></tr><tr><th><a href="#reliable">reliable dataChannels</a></th><td class="yes"></td><td class="yes"></td><td class="yes"></td><td class="yes"></td><td class="no"></td><td class="no"></td><td class="yes"></td></tr><tr class="about"><th></th><td colspan="7">Data channel support comes in two flavors: "reliable" means they are guaranteed to arrive and arrive in the correct order, "unreliable" means that order doesn't matter and dropped messages are acceptable.</td></tr><tr><th><a href="#unreliable">unreliable dataChannels</a></th><td class="yes"></td><td class="yes"></td><td class="yes"></td><td class="yes"></td><td class="no"></td><td class="no"></td><td class="yes"></td></tr><tr class="about"><th></th><td colspan="7">Data channel support comes in two flavors: "reliable" means they are guaranteed to arrive and arrive in the correct order, "unreliable" means that order doesn't matter and dropped messages are acceptable.</td></tr><tr><th><a href="#screenSharing">Screen Sharing</a></th><td title="requires a flag" class="inc"></td><td title="requires a flag" class="inc"></td><td class="no"></td><td class="no"></td><td class="no"></td><td class="no"></td><td class="no"></td></tr><tr class="about"><th></th><td colspan="7">The ability to request access to a MediaStream of the computer screen. This is crucial for feature parity with existing communication solutions.</td></tr><tr><th><a href="#rebroadcast">Stream re-broadcasting</a></th><td class="no"></td><td class="no"></td><td class="no"></td><td class="no"></td><td class="no"></td><td class="no"></td><td class="no"></td></tr><tr class="about"><th></th><td colspan="7">In order to support some of the more interesting topologies for routing data, we need to be able to take a MediaStream object from one peer and add it to another PeerConneciton. Without this, the only way of doing multi-user is a mesh network or a centralized server.</td></tr><tr><th><a href="#echo">Solid interoperability</a></th><td class="inc"></td><td class="inc"></td><td class="inc"></td><td class="inc"></td><td class="no"></td><td class="no"></td><td class="inc"></td></tr><tr class="about"><th></th><td colspan="7">Multiple browsers consistently being able to talk to each other is essential to making WebRTC a true web technology and not just something that makes for a nice demo.</td></tr><tr><th><a href="#echo">Echo cancellation</a></th><td class="no"></td><td class="no"></td><td class="no"></td><td class="no"></td><td class="no"></td><td class="no"></td><td class="no"></td></tr><tr class="about"><th></th><td colspan="7">This may be the most subjective item in this list. 3 or 4 users should be able to use a service like Talky without headphones on and not experience feedback problems.</td></tr></table></div><p><small>See an error? This site is open source on Github, please let us know by <a href="https://github.com/andyet/iswebrtcreadyyet.com/issues">opening an issue</a>.</small></p><div id="feedback" class="card"><h2>Recent conversation quality</h2><h3>Human reported feedback based on the last <span data-browser="overall" data-metric="count" data-no-animate="true" class="rating"></span> conversations.</h3><!--<h2>Current Overall Score <span data-browser="overall" data-metric="highQuality" data-metric-unit="percentage" class="rating"></span></h2>--><div class="report-card-browser"><h3><img src="images/chrome.png">Chrome</h3><div class="report-card-section"><h4>High Quality: <span data-browser="Chrome" data-metric="highQuality" data-metric-unit="percentage" class="rating"></span></h4><div data-browser="Chrome" data-metric="highQuality" data-metric-unit="percentage" class="bar-chart"><div class="bar-chart-background"><div class="bar-chart-bar"></div></div></div></div><div class="report-card-section"><h4> 
-Good video: <span data-browser="Chrome" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="rating"></span></h4><div data-browser="Chrome" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="bar-chart"><div class="bar-chart-background"><div class="bar-chart-bar"></div></div></div></div><div class="report-card-section"><h4> 
-Good audio: <span data-browser="Chrome" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="rating"></span></h4><div data-browser="Chrome" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="bar-chart"><div class="bar-chart-background"><div class="bar-chart-bar"></div></div></div></div></div><div class="report-card-browser"><h3><img src="images/firefox.png">Firefox</h3><div class="report-card-section"><h4>High Quality: <span data-browser="Firefox" data-metric="highQuality" data-metric-unit="percentage" class="rating"></span></h4><div data-browser="Firefox" data-metric="highQuality" data-metric-unit="percentage" class="bar-chart"><div class="bar-chart-background"><div class="bar-chart-bar"></div></div></div></div><div class="report-card-section"><h4> 
-Good video: <span data-browser="Firefox" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="rating"></span></h4><div data-browser="Firefox" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="bar-chart"><div class="bar-chart-background"><div class="bar-chart-bar"></div></div></div></div><div class="report-card-section"><h4> 
-Good audio: <span data-browser="Firefox" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="rating"></span></h4><div data-browser="Firefox" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="bar-chart"><div class="bar-chart-background"><div class="bar-chart-bar"></div></div></div></div></div></div><p><small>This data gathered from the feedback form on <a href="https://talky.io">Talky</a>.</small></p></section><section class="cl"><article><h2>You can help make WebRTC better for everyone—by using it.</h2><p>WebRTC is one of the most transformative additions to the web platform, but it's still early days.</p><p>There's a big difference between technology that makes for an interesting demo and what's needed for something that could work on par with existing video chat products.</p><p>That gap can be closed—and data can help browser developers championing these great features to close it faster.</p><h2>Here's how you can help:</h2><p><strong>Use <a href="http://talky.io">Talky</a> the next time you have need for a web video chat, then submit the feedback form. </strong></p><p>All statistics are collected anonymously and will be reported publicly on this site.</p></article><aside><a href="http://talky.io"><img src="https://talky.io/images/talky.png" class="talky"></a><h3>Help test WebRTC now</h3><p>Talky is built entirely on open-source, MIT-licensed <a href="http://simplewebrtc.com">SimpleWebRTC</a> toolkit.</p><p>SimpleWebRTC is intended to be fully interoperable with any signaling platform (open source servers like <a href="http://github.com/andyet/signalmaster">SignalMaster</a>, federated protocols like XMPP, and commercial products.)</p><p>Teams at Mozilla and Google are actively using Talky to dogfood and improve their WebRTC implementations.      </p></aside></section></div><script src="http://static.andyet.com/tag.js"></script><script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="js/graph.js"></script><script>$(function () {
-  $('table').delegate('th a', 'click', function () {
-    $(this).parents('tr').next().slideToggle();
-  });
-});</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Is WebRTC ready yet?</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="WebRTC, Talky, WebAudio, SimpleWebRTC">
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7773252/712764/css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="content">
+      <section>
+        <h1>Is WebRTC ready yet?</h1>
+        <div id="support" class="card">
+          <h2>Browser support scorecard</h2>
+          <table>
+            <tr class="browsers">
+              <th> </th>
+              <th><img src="images/canary.png" alt="Chrome Canary" title="Chrome Canary"></th>
+              <th> <img src="images/chrome.png" alt="Chrome" title="Chrome"></th>
+              <th> <img src="images/nightly.png" alt="Firefox Nightly" title="Firefox Nightly"></th>
+              <th><img src="images/firefox.png" alt="Firefox" title="Firefox"></th>
+              <th><img src="images/ie.png" alt="Internet Explorer" title="Internet Explorer"></th>
+              <th><img src="images/safari.png" alt="Safari" title="Safari"></th>
+              <th><img src="images/opera.png" alt="Opera" title="Opera"></th>
+            </tr>
+            <tr class="versions">
+              <th></th>
+              <th>Canary</th>
+              <th>Chrome 31</th>
+              <th>Nightly</th>
+              <th>Firefox 25</th>
+              <th>IE</th>
+              <th>Safari</th>
+              <th>Opera 18</th>
+            </tr>
+            <tr> 
+              <th class="feature"> <a href="#peerConn">PeerConnections</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="yes"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">The basic building block for connecting to peers.</td>
+            </tr>
+            <tr>
+              <th><a href="#getUserMedia">getUserMedia</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="yes"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">The ability to request access to a user's webcam and microphone.</td>
+            </tr>
+            <tr>
+              <th><a href="#mediaConstraints" title="for bandwidth control">mediaConstraints</a></th>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="inc"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">The ability to specify restricted video sizes. This is important for bandwidth control. There are two aspects to this. The first is being able to specify constraints when first requesting access. The second is allowing you to apply constraints to an existing MediaStream. </td>
+            </tr>
+            <tr>
+              <th><a href="#turn">TURN support</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="yes"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">TURN servers are necessary for situations where STUN fails to produce two addressable endpoints. Which is a fancy way of saying, "getting around firewalls."</td>
+            </tr>
+            <tr>
+              <th><a href="#mediaStream">MediaStream API</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="yes"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">When you request user media or get media from a peer it's held in a MediaStream object. Having the ability to add/remove tracks, mute, and apply constraints makes it possible to do audio processing and control bandwidth consumption.</td>
+            </tr>
+            <tr>
+              <th><a href="#webAudio">WebAudio Integration</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="yes"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">WebAudio enables processing of raw audio. For WebRTC applications it's important that this capability not only exist, but that it's capable of being used with a MediaStream as a source.</td>
+            </tr>
+            <tr>
+              <th><a href="#reliable">reliable dataChannels</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="yes"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">Data channel support comes in two flavors: "reliable" means they are guaranteed to arrive and arrive in the correct order, "unreliable" means that order doesn't matter and dropped messages are acceptable.</td>
+            </tr>
+            <tr>
+              <th><a href="#unreliable">unreliable dataChannels</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="yes"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">Data channel support comes in two flavors: "reliable" means they are guaranteed to arrive and arrive in the correct order, "unreliable" means that order doesn't matter and dropped messages are acceptable.</td>
+            </tr>
+            <tr>
+              <th><a href="#screenSharing">Screen Sharing</a></th>
+              <td title="requires a flag" class="inc"></td>
+              <td title="requires a flag" class="inc"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">The ability to request access to a MediaStream of the computer screen. This is crucial for feature parity with existing communication solutions.</td>
+            </tr>
+            <tr>
+              <th><a href="#rebroadcast">Stream re-broadcasting</a></th>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">In order to support some of the more interesting topologies for routing data, we need to be able to take a MediaStream object from one peer and add it to another PeerConneciton. Without this, the only way of doing multi-user is a mesh network or a centralized server.</td>
+            </tr>
+            <tr>
+              <th><a href="#echo">Solid interoperability</a></th>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="inc"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">Multiple browsers consistently being able to talk to each other is essential to making WebRTC a true web technology and not just something that makes for a nice demo.</td>
+            </tr>
+            <tr>
+              <th><a href="#echo">Echo cancellation</a></th>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">This may be the most subjective item in this list. 3 or 4 users should be able to use a service like Talky without headphones on and not experience feedback problems.</td>
+            </tr>
+          </table>
+        </div>
+        <p><small>See an error? This site is open source on Github, please let us know by <a href="https://github.com/andyet/iswebrtcreadyyet.com/issues">opening an issue</a>.</small></p>
+        <div id="feedback" class="card">
+          <h2>Recent conversation quality</h2>
+          <h3>Human reported feedback based on the last <span data-browser="overall" data-metric="count" data-no-animate="true" class="rating"></span> conversations.</h3><!--
+          <h2>Current Overall Score <span data-browser="overall" data-metric="highQuality" data-metric-unit="percentage" class="rating"></span></h2>-->
+          <div class="report-card-browser">
+            <h3><img src="images/chrome.png">Chrome
+            </h3>
+            <div class="report-card-section">
+              <h4>High Quality: <span data-browser="Chrome" data-metric="highQuality" data-metric-unit="percentage" class="rating"></span></h4>
+              <div data-browser="Chrome" data-metric="highQuality" data-metric-unit="percentage" class="bar-chart">
+                <div class="bar-chart-background">
+                  <div class="bar-chart-bar"></div>
+                </div>
+              </div>
+            </div>
+            <div class="report-card-section">
+              <h4>
+                 
+                Good video: <span data-browser="Chrome" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="rating"></span>
+              </h4>
+              <div data-browser="Chrome" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="bar-chart">
+                <div class="bar-chart-background">
+                  <div class="bar-chart-bar"></div>
+                </div>
+              </div>
+            </div>
+            <div class="report-card-section">
+              <h4>
+                 
+                Good audio: <span data-browser="Chrome" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="rating"></span>
+              </h4>
+              <div data-browser="Chrome" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="bar-chart">
+                <div class="bar-chart-background">
+                  <div class="bar-chart-bar"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="report-card-browser">
+            <h3><img src="images/firefox.png">Firefox
+            </h3>
+            <div class="report-card-section">
+              <h4>High Quality: <span data-browser="Firefox" data-metric="highQuality" data-metric-unit="percentage" class="rating"></span></h4>
+              <div data-browser="Firefox" data-metric="highQuality" data-metric-unit="percentage" class="bar-chart">
+                <div class="bar-chart-background">
+                  <div class="bar-chart-bar"></div>
+                </div>
+              </div>
+            </div>
+            <div class="report-card-section">
+              <h4>
+                 
+                Good video: <span data-browser="Firefox" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="rating"></span>
+              </h4>
+              <div data-browser="Firefox" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="bar-chart">
+                <div class="bar-chart-background">
+                  <div class="bar-chart-bar"></div>
+                </div>
+              </div>
+            </div>
+            <div class="report-card-section">
+              <h4>
+                 
+                Good audio: <span data-browser="Firefox" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="rating"></span>
+              </h4>
+              <div data-browser="Firefox" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="bar-chart">
+                <div class="bar-chart-background">
+                  <div class="bar-chart-bar"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p><small>
+             
+            This data gathered from the feedback form on<a href="https://talky.io">Talky</a></small></p>
+      </section>
+      <section class="cf">
+        <article>
+          <h2>You can help make WebRTC better for everyone—by using it.</h2>
+          <p>WebRTC is one of the most transformative additions to the web platform, but it's still early days.</p>
+          <p>There's a big difference between technology that makes for an interesting demo and what's needed for something that could work on par with existing video chat products.</p>
+          <p>That gap can be closed—and data can help browser developers championing these great features to close it faster.</p>
+          <h2>Here's how you can help:</h2>
+          <p><strong>
+               
+              Use <a href="https://talky.io">Talky  </a>the next time you have need for a web video chat, then submit the feedback form. </strong></p>
+          <p>All statistics are collected anonymously and will be reported publicly on this site.</p>
+        </article>
+        <aside><a href="http://talky.io" alt="Talky" class="talky-logo"></a>
+          <h3>Help test WebRTC now</h3>
+          <p>
+             
+            Talky is built entirely on open-source, MIT-licensed <a href="http://simplewebrtc.com">SimpleWebRTC </a>toolkit.
+          </p>
+          <p>
+             
+            SimpleWebRTC is intended to be fully interoperable with any signaling platform (open source servers like <a href="http://github.com/andyet/signalmaster">SignalMaster</a>, federated protocols like XMPP, and commercial products.)
+          </p>
+          <p>Teams at Mozilla and Google are actively using Talky to dogfood and improve their WebRTC implementations.      </p>
+        </aside>
+      </section>
+    </div>
+    <script src="http://static.andyet.com/tag.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="js/graph.js"></script>
+    <script>
+      $(function () {
+        $('table').delegate('th a', 'click', function () {
+          $(this).parents('tr').next().slideToggle();
+        });
+      });
+    </script>
+  </body>
+</html>

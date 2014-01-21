@@ -8,10 +8,11 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1")
     meta(name="description", content="WebRTC, Talky, WebAudio, SimpleWebRTC")
 
+    link(rel="stylesheet", type="text/css", href="//cloud.typography.com/7773252/712764/css/fonts.css")
     link(rel='stylesheet', href='css/style.css')
 
   body
-    .wrap
+    .content
       section
         h1 Is WebRTC ready yet?
         #support.card
@@ -241,9 +242,13 @@ html(lang="en")
                   .bar-chart-background
                     .bar-chart-bar
               
-        p <small>This data gathered from the feedback form on <a href="https://talky.io">Talky</a>.</small>
+        p
+          small 
+            | This data gathered from the feedback form on
+            a(href="https://talky.io") Talky
 
-      section.cl
+      section.cf
+
         article
           h2 You can help make WebRTC better for everyone—by using it.
           p WebRTC is one of the most transformative additions to the web platform, but it's still early days.
@@ -251,14 +256,23 @@ html(lang="en")
           p That gap can be closed—and data can help browser developers championing these great features to close it faster.
           h2 Here's how you can help:
           p
-            strong Use <a href="http://talky.io">Talky</a> the next time you have need for a web video chat, then submit the feedback form. 
+            strong 
+              | Use 
+              a(href="https://talky.io") Talky  
+              | the next time you have need for a web video chat, then submit the feedback form. 
           p All statistics are collected anonymously and will be reported publicly on this site.
+
         aside
-          a(href="http://talky.io")
-            img.talky(src="https://talky.io/images/talky.png")
+          a(href="http://talky.io", class="talky-logo", alt="Talky")
           h3 Help test WebRTC now
-          p Talky is built entirely on open-source, MIT-licensed <a href="http://simplewebrtc.com">SimpleWebRTC</a> toolkit.
-          p SimpleWebRTC is intended to be fully interoperable with any signaling platform (open source servers like <a href="http://github.com/andyet/signalmaster">SignalMaster</a>, federated protocols like XMPP, and commercial products.)
+          p 
+            | Talky is built entirely on open-source, MIT-licensed 
+            a(href="http://simplewebrtc.com") SimpleWebRTC 
+            | toolkit.
+          p 
+            | SimpleWebRTC is intended to be fully interoperable with any signaling platform (open source servers like 
+            a(href="http://github.com/andyet/signalmaster") SignalMaster
+            | , federated protocols like XMPP, and commercial products.)
           p Teams at Mozilla and Google are actively using Talky to dogfood and improve their WebRTC implementations.      
     
     script(src='http://static.andyet.com/tag.js')
