@@ -1,4 +1,4 @@
-# iswebrtcready.org
+# iswebrtcreadyyet.com
 
 Promoting WebRTC support through the clever use of a website with words on it.
 
