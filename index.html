@@ -17,10 +17,10 @@
           <h2>Browser support scorecard</h2>
           <table>
             <tr class="browsers">
-              <th> </th>
+              <th></th>
               <th><img src="images/canary.png" alt="Chrome Canary" title="Chrome Canary"></th>
-              <th> <img src="images/chrome.png" alt="Chrome" title="Chrome"></th>
-              <th> <img src="images/nightly.png" alt="Firefox Nightly" title="Firefox Nightly"></th>
+              <th><img src="images/chrome.png" alt="Chrome" title="Chrome"></th>
+              <th><img src="images/nightly.png" alt="Firefox Nightly" title="Firefox Nightly"></th>
               <th><img src="images/firefox.png" alt="Firefox" title="Firefox"></th>
               <th><img src="images/ie.png" alt="Internet Explorer" title="Internet Explorer"></th>
               <th><img src="images/safari.png" alt="Safari" title="Safari"></th>
@@ -36,8 +36,8 @@
               <th>Safari</th>
               <th>Opera 20</th>
             </tr>
-            <tr> 
-              <th class="feature"> <a href="#peerConn">PeerConnection API</a></th>
+            <tr>
+              <th class="feature"><a href="#peerConn">PeerConnection API</a></th>
               <td class="yes"></td>
               <td class="yes"></td>
               <td class="yes"></td>
@@ -50,8 +50,8 @@
               <th></th>
               <td colspan="7">The basic building block for connecting to peers. Defined by the W3C WebRTC Working Group.</td>
             </tr>
-            <tr> 
-              <th class="feature"> <a href="#peerConn">ORTC API</a></th>
+            <tr>
+              <th class="feature"><a href="#peerConn">ORTC API</a></th>
               <td class="no"></td>
               <td class="no"></td>
               <td class="no"></td>
@@ -135,21 +135,7 @@
               <td colspan="7">WebAudio enables processing of raw audio. For WebRTC applications it's important that this capability not only exist, but that it's capable of being used with a MediaStream as a source.</td>
             </tr>
             <tr>
-              <th><a href="#reliable">reliable dataChannels</a></th>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-              <td class="yes"></td>
-            </tr>
-            <tr class="about">
-              <th></th>
-              <td colspan="7">Data channel support comes in two flavors: "reliable" means they are guaranteed to arrive and arrive in the correct order, "unreliable" means that order doesn't matter and dropped messages are acceptable.</td>
-            </tr>
-            <tr>
-              <th><a href="#unreliable">unreliable dataChannels</a></th>
+              <th><a href="#dataChannels">dataChannels</a></th>
               <td class="yes"></td>
               <td class="yes"></td>
               <td class="yes"></td>
@@ -225,7 +211,9 @@
           <h2>Recent conversation quality</h2>
           <h3>Human reported feedback based on the last <span data-browser="overall" data-metric="count" data-no-animate="true" class="rating"></span> conversations.</h3>
           <!--
-          <h2>Current Overall Score <span data-browser="overall" data-metric="highQuality" data-metric-unit="percentage" class="rating"></span></h2>
+          h2 Current Overall Score 
+            span.rating(data-browser='overall', data-metric='highQuality', data-metric-unit='percentage')
+            
           -->
           <div class="report-card-browser">
             <h3><img src="images/chrome.png">Chrome
@@ -239,10 +227,7 @@
               </div>
             </div>
             <div class="report-card-section">
-              <h4>
-                 
-                Good video: <span data-browser="Chrome" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="rating"></span>
-              </h4>
+              <h4>Good video: <span data-browser="Chrome" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="rating"></span></h4>
               <div data-browser="Chrome" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="bar-chart">
                 <div class="bar-chart-background">
                   <div class="bar-chart-bar"></div>
@@ -250,10 +235,7 @@
               </div>
             </div>
             <div class="report-card-section">
-              <h4>
-                 
-                Good audio: <span data-browser="Chrome" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="rating"></span>
-              </h4>
+              <h4>Good audio: <span data-browser="Chrome" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="rating"></span></h4>
               <div data-browser="Chrome" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="bar-chart">
                 <div class="bar-chart-background">
                   <div class="bar-chart-bar"></div>
@@ -273,10 +255,7 @@
               </div>
             </div>
             <div class="report-card-section">
-              <h4>
-                 
-                Good video: <span data-browser="Firefox" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="rating"></span>
-              </h4>
+              <h4>Good video: <span data-browser="Firefox" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="rating"></span></h4>
               <div data-browser="Firefox" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="bar-chart">
                 <div class="bar-chart-background">
                   <div class="bar-chart-bar"></div>
@@ -284,10 +263,7 @@
               </div>
             </div>
             <div class="report-card-section">
-              <h4>
-                 
-                Good audio: <span data-browser="Firefox" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="rating"></span>
-              </h4>
+              <h4>Good audio: <span data-browser="Firefox" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="rating"></span></h4>
               <div data-browser="Firefox" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="bar-chart">
                 <div class="bar-chart-background">
                   <div class="bar-chart-bar"></div>
@@ -305,21 +281,13 @@
           <p>There's a big difference between technology that makes for an interesting demo and what's needed for something that could work on par with existing video chat products.</p>
           <p>That gap can be closed&mdash;and data can help browser developers championing these great features to close it faster.</p>
           <h2>Here's how you can help:</h2>
-          <p><strong>
-               
-              Use <a href="https://talky.io">Talky  </a>the next time you have need for a web video chat, then submit the feedback form. </strong></p>
+          <p><strong>Use <a href="https://talky.io">Talky  </a>the next time you have need for a web video chat, then submit the feedback form. </strong></p>
           <p>All statistics are collected anonymously and will be reported publicly on this site.</p>
         </article>
         <aside><a href="http://talky.io" alt="Talky" class="talky-logo"></a>
           <h3>Help test WebRTC now</h3>
-          <p>
-             
-            Talky is built entirely on open-source, MIT-licensed <a href="http://simplewebrtc.com">SimpleWebRTC </a>toolkit.
-          </p>
-          <p>
-             
-            SimpleWebRTC is intended to be fully interoperable with any signaling platform (open source servers like <a href="http://github.com/andyet/signalmaster">SignalMaster</a>, federated protocols like XMPP, and commercial products.)
-          </p>
+          <p>Talky is built entirely on open-source, MIT-licensed <a href="http://simplewebrtc.com">SimpleWebRTC </a>toolkit.</p>
+          <p>SimpleWebRTC is intended to be fully interoperable with any signaling platform (open source servers like <a href="http://github.com/andyet/signalmaster">SignalMaster</a>, federated protocols like XMPP, and commercial products.)</p>
           <p>Teams at Mozilla and Google are actively using Talky to dogfood and improve their WebRTC implementations.      </p>
         </aside>
       </section>

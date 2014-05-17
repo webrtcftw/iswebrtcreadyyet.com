@@ -1,4 +1,4 @@
-!!! 5
+doctype html
 html(lang="en")
   head
     title Is WebRTC ready yet?
@@ -136,20 +136,7 @@ html(lang="en")
               td(colspan="7") WebAudio enables processing of raw audio. For WebRTC applications it's important that this capability not only exist, but that it's capable of being used with a MediaStream as a source.
             tr
               th
-                a(href="#reliable") reliable dataChannels
-              td.yes
-              td.yes
-              td.yes
-              td.yes
-              td.no
-              td.no
-              td.yes
-            tr.about
-              th
-              td(colspan="7") Data channel support comes in two flavors: "reliable" means they are guaranteed to arrive and arrive in the correct order, "unreliable" means that order doesn't matter and dropped messages are acceptable.
-            tr
-              th
-                a(href="#unreliable") unreliable dataChannels
+                a(href="#dataChannels") dataChannels
               td.yes
               td.yes
               td.yes
