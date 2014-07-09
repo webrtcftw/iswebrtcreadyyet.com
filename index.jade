@@ -163,8 +163,8 @@ html(lang="en")
             tr
               th
                 a(href="#screenSharing") Screen Sharing
-              td.yes(title="requires an extension")
-              td.yes(title="requires an extension or flag")
+              td.inc(title="requires an extension")
+              td.inc(title="requires an extension")
               td.no
               td.no
               td.no
@@ -172,7 +172,7 @@ html(lang="en")
               td.no
             tr.about
               th
-              td(colspan="7") The ability to request access to a MediaStream of the computer screen. This is crucial for feature parity with existing communication solutions.
+              td(colspan="7") The ability to request access to a MediaStream of the computer screen. This is crucial for feature parity with existing communication solutions. In Chrome, this requires an <a href="https://github.com/HenrikJoreteg/getScreenMedia/tree/master/extension-sample">extension</a>, unless you're using Google Hangouts which seems to be whitelisted for access to the API.
             tr
               th
                 a(href="#rebroadcast") Stream re-broadcasting
