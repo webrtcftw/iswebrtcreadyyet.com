@@ -20,49 +20,21 @@
               <th></th>
               <th><img src="images/canary.png" alt="Chrome Canary" title="Chrome Canary"></th>
               <th><img src="images/chrome.png" alt="Chrome" title="Chrome"></th>
+              <th><img src="images/opera.png" alt="Opera" title="Opera"></th>
               <th><img src="images/nightly.png" alt="Firefox Nightly" title="Firefox Nightly"></th>
               <th><img src="images/firefox.png" alt="Firefox" title="Firefox"></th>
               <th><img src="images/ie.png" alt="Internet Explorer" title="Internet Explorer"></th>
               <th><img src="images/safari.png" alt="Safari" title="Safari"></th>
-              <th><img src="images/opera.png" alt="Opera" title="Opera"></th>
             </tr>
             <tr class="versions">
               <th></th>
               <th>Canary</th>
               <th>Chrome</th>
+              <th>Opera</th>
               <th>Nightly</th>
               <th>Firefox</th>
               <th>IE</th>
               <th>Safari</th>
-              <th>Opera</th>
-            </tr>
-            <tr>
-              <th class="feature"><a href="#peerConn">PeerConnection API</a></th>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td title="not under consideration" class="no"></td>
-              <td class="no"></td>
-              <td class="yes"></td>
-            </tr>
-            <tr class="about">
-              <th></th>
-              <td colspan="7">The basic building block for connecting to peers. Defined by the W3C WebRTC Working Group.</td>
-            </tr>
-            <tr>
-              <th class="feature"><a href="#peerConn">ORTC API</a></th>
-              <td class="no"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-              <td title="requires the ORTC prototype plugin" class="inc"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-            </tr>
-            <tr class="about">
-              <th></th>
-              <td colspan="7">An alternative to the PeerConnection API defined by the W3C ORTC Community Group. A prototype plugin for Chrome and Internet Explorer is available from <a href="http://msopentech.com/blog/2014/04/25/updated-ortc-api-prototype-released/">MS Open Tech</a>.</td>
             </tr>
             <tr>
               <th><a href="#getUserMedia">getUserMedia</a></th>
@@ -70,13 +42,153 @@
               <td class="yes"></td>
               <td class="yes"></td>
               <td class="yes"></td>
+              <td class="yes"></td>
               <td title="requires the ORTC prototype plugin" class="inc"></td>
               <td class="no"></td>
-              <td class="yes"></td>
             </tr>
             <tr class="about">
               <th></th>
               <td colspan="7">The ability to request access to a user's webcam and microphone.</td>
+            </tr>
+            <tr>
+              <th><a href="#dataChannels">dataChannels</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">Data channel support comes in two flavors: "reliable" means they are guaranteed to arrive and arrive in the correct order, "unreliable" means that order doesn't matter and dropped messages are acceptable.</td>
+            </tr>
+            <tr>
+              <th class="feature"><a href="#peerConn">PeerConnection API</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td title="not under consideration" class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">The basic building block for connecting to peers. Defined by the W3C WebRTC Working Group.</td>
+            </tr>
+            <tr>
+              <th><a href="#turn">TURN support</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">TURN servers are necessary for situations where STUN fails to produce two addressable endpoints. Which is a fancy way of saying, "getting around firewalls."</td>
+            </tr>
+            <tr>
+              <th><a href="#webAudio">WebAudio Integration</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">WebAudio enables processing of raw audio. For WebRTC applications it's important that this capability not only exist, but that it's capable of being used with a MediaStream as a source.</td>
+            </tr>
+            <tr>
+              <th><a href="#mediaStream">MediaStream API</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">When you request user media or get media from a peer it's held in a MediaStream object. Having the ability to add/remove tracks, mute, and apply constraints makes it possible to do audio processing and control bandwidth consumption.</td>
+            </tr>
+            <tr>
+              <th><a href="#echo">Echo cancellation</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">This may be the most subjective item in this list. 3 or 4 users should be able to use a service like Talky without headphones on and not experience feedback problems.</td>
+            </tr>
+            <tr>
+              <th><a href="#echo">Solid interoperability</a></th>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">Multiple browsers consistently being able to talk to each other is essential to making WebRTC a true web technology and not just something that makes for a nice demo.</td>
+            </tr>
+            <tr>
+              <th><a href="#mediaConstraints" title="for bandwidth control">mediaConstraints</a></th>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">The ability to specify restricted video sizes. This is important for bandwidth control. There are two aspects to this. The first is being able to specify constraints when first requesting access. The second is allowing you to apply constraints to an existing MediaStream. </td>
+            </tr>
+            <tr>
+              <th><a href="#multistream">Multiple Streams</a></th>
+              <td title="using 'Plan B'" class="yes"></td>
+              <td title="using 'Plan B'" class="yes"></td>
+              <td title="using 'Plan B'" class="yes"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">The ability to transport multiple audio and video streams on the same peerconnection. This is important for transporting multiple streams from a centralized server or rebroadcasting streams from other peers. Dear Firefox, doing the same on multiple connections <a href="https://hacks.mozilla.org/2013/09/webrtc-update-and-workarounds/">as suggested here</a> is not sufficient.</td>
+            </tr>
+            <tr>
+              <th><a href="#screenSharing">Screen Sharing</a></th>
+              <td title="requires an extension" class="inc"></td>
+              <td title="requires an extension" class="inc"></td>
+              <td class="no"></td>
+              <td title="behind a flag." class="inc"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">The ability to request access to a MediaStream of the computer screen. This is crucial for feature parity with existing communication solutions. In Chrome, this requires an <a href="https://github.com/HenrikJoreteg/getScreenMedia/tree/master/extension-sample">extension</a>, unless you're using Google Hangouts which seems to be whitelisted for access to the API.</td>
             </tr>
             <tr>
               <th><a href="#simulcast">Simulcast</a></th>
@@ -93,90 +205,6 @@
               <td colspan="7">The ability to acquire media streams at multiple resolutions and framerates and send them to the peer.</td>
             </tr>
             <tr>
-              <th><a href="#mediaConstraints" title="for bandwidth control">mediaConstraints</a></th>
-              <td class="inc"></td>
-              <td class="inc"></td>
-              <td class="inc"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-              <td class="inc"></td>
-            </tr>
-            <tr class="about">
-              <th></th>
-              <td colspan="7">The ability to specify restricted video sizes. This is important for bandwidth control. There are two aspects to this. The first is being able to specify constraints when first requesting access. The second is allowing you to apply constraints to an existing MediaStream. </td>
-            </tr>
-            <tr>
-              <th><a href="#turn">TURN support</a></th>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-              <td class="yes"></td>
-            </tr>
-            <tr class="about">
-              <th></th>
-              <td colspan="7">TURN servers are necessary for situations where STUN fails to produce two addressable endpoints. Which is a fancy way of saying, "getting around firewalls."</td>
-            </tr>
-            <tr>
-              <th><a href="#mediaStream">MediaStream API</a></th>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="inc"></td>
-              <td class="inc"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-              <td class="yes"></td>
-            </tr>
-            <tr class="about">
-              <th></th>
-              <td colspan="7">When you request user media or get media from a peer it's held in a MediaStream object. Having the ability to add/remove tracks, mute, and apply constraints makes it possible to do audio processing and control bandwidth consumption.</td>
-            </tr>
-            <tr>
-              <th><a href="#webAudio">WebAudio Integration</a></th>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-              <td class="yes"></td>
-            </tr>
-            <tr class="about">
-              <th></th>
-              <td colspan="7">WebAudio enables processing of raw audio. For WebRTC applications it's important that this capability not only exist, but that it's capable of being used with a MediaStream as a source.</td>
-            </tr>
-            <tr>
-              <th><a href="#dataChannels">dataChannels</a></th>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-              <td class="yes"></td>
-            </tr>
-            <tr class="about">
-              <th></th>
-              <td colspan="7">Data channel support comes in two flavors: "reliable" means they are guaranteed to arrive and arrive in the correct order, "unreliable" means that order doesn't matter and dropped messages are acceptable.</td>
-            </tr>
-            <tr>
-              <th><a href="#screenSharing">Screen Sharing</a></th>
-              <td title="requires an extension" class="inc"></td>
-              <td title="requires an extension" class="inc"></td>
-              <td title="behind a flag." class="inc"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-            </tr>
-            <tr class="about">
-              <th></th>
-              <td colspan="7">The ability to request access to a MediaStream of the computer screen. This is crucial for feature parity with existing communication solutions. In Chrome, this requires an <a href="https://github.com/HenrikJoreteg/getScreenMedia/tree/master/extension-sample">extension</a>, unless you're using Google Hangouts which seems to be whitelisted for access to the API.</td>
-            </tr>
-            <tr>
               <th><a href="#rebroadcast">Stream re-broadcasting</a></th>
               <td class="inc"></td>
               <td class="inc"></td>
@@ -191,46 +219,18 @@
               <td colspan="7">In order to support some of the more interesting topologies for routing data, we need to be able to take a MediaStream object from one peer and add it to another PeerConneciton. Without this, the only way of doing multi-user is a mesh network or a centralized server.</td>
             </tr>
             <tr>
-              <th><a href="#multistream">Multiple Streams</a></th>
-              <td title="using 'Plan B'" class="yes"></td>
-              <td title="using 'Plan B'" class="yes"></td>
+              <th class="feature"><a href="#peerConn">ORTC API</a></th>
               <td class="no"></td>
               <td class="no"></td>
               <td class="no"></td>
               <td class="no"></td>
-              <td title="using 'Plan B'" class="yes"></td>
+              <td class="no"></td>
+              <td title="requires the ORTC prototype plugin" class="inc"></td>
+              <td class="no"></td>
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">The ability to transport multiple audio and video streams on the same peerconnection. This is important for transporting multiple streams from a centralized server or rebroadcasting streams from other peers. Dear Firefox, doing the same on multiple connections <a href="https://hacks.mozilla.org/2013/09/webrtc-update-and-workarounds/">as suggested here</a> is not sufficient.</td>
-            </tr>
-            <tr>
-              <th><a href="#echo">Solid interoperability</a></th>
-              <td class="inc"></td>
-              <td class="inc"></td>
-              <td class="inc"></td>
-              <td class="inc"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-              <td class="inc"></td>
-            </tr>
-            <tr class="about">
-              <th></th>
-              <td colspan="7">Multiple browsers consistently being able to talk to each other is essential to making WebRTC a true web technology and not just something that makes for a nice demo.</td>
-            </tr>
-            <tr>
-              <th><a href="#echo">Echo cancellation</a></th>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="inc"></td>
-              <td class="inc"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-              <td class="inc"></td>
-            </tr>
-            <tr class="about">
-              <th></th>
-              <td colspan="7">This may be the most subjective item in this list. 3 or 4 users should be able to use a service like Talky without headphones on and not experience feedback problems.</td>
+              <td colspan="7">An alternative to the PeerConnection API defined by the W3C ORTC Community Group. A prototype plugin for Chrome and Internet Explorer is available from <a href="http://msopentech.com/blog/2014/04/25/updated-ortc-api-prototype-released/">MS Open Tech</a>.</td>
             </tr>
           </table>
         </div>
