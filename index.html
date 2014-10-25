@@ -79,18 +79,32 @@
               <td colspan="7">The ability to request access to a user's webcam and microphone.</td>
             </tr>
             <tr>
-              <th><a href="#simulcast">Simulcast</a></th>
+              <th><a href="#screenSharing">Screen Sharing</a></th>
+              <td title="requires an extension" class="inc"></td>
+              <td title="requires an extension" class="inc"></td>
+              <td class="no"></td>
+              <td title="behind a flag." class="inc"></td>
+              <td title="behind a flag." class="inc"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr>
+              <th><a href="#echo">Echo cancellation</a></th>
+              <td class="yes"></td>
+              <td class="yes"></td>
               <td class="yes"></td>
               <td class="inc"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-              <td class="no"></td>
+              <td class="inc"></td>
               <td class="no"></td>
               <td class="no"></td>
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">The ability to acquire media streams at multiple resolutions and framerates and send them to the peer.</td>
+              <td colspan="7">This may be the most subjective item in this list. 3 or 4 users should be able to use a service like Talky without headphones on and not experience feedback problems.</td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">The ability to request access to a MediaStream of the computer screen. This is crucial for feature parity with existing communication solutions. In Chrome, this requires an <a href="https://github.com/HenrikJoreteg/getScreenMedia/tree/master/extension-sample">extension</a>, unless you're using Google Hangouts which seems to be whitelisted for access to the API.</td>
             </tr>
             <tr>
               <th><a href="#mediaConstraints" title="for bandwidth control">mediaConstraints</a></th>
@@ -105,20 +119,6 @@
             <tr class="about">
               <th></th>
               <td colspan="7">The ability to specify restricted video sizes. This is important for bandwidth control. There are two aspects to this. The first is being able to specify constraints when first requesting access. The second is allowing you to apply constraints to an existing MediaStream. </td>
-            </tr>
-            <tr>
-              <th><a href="#turn">TURN support</a></th>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="yes"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-            </tr>
-            <tr class="about">
-              <th></th>
-              <td colspan="7">TURN servers are necessary for situations where STUN fails to produce two addressable endpoints. Which is a fancy way of saying, "getting around firewalls."</td>
             </tr>
             <tr>
               <th><a href="#mediaStream">MediaStream API</a></th>
@@ -149,6 +149,20 @@
               <td colspan="7">WebAudio enables processing of raw audio. For WebRTC applications it's important that this capability not only exist, but that it's capable of being used with a MediaStream as a source.</td>
             </tr>
             <tr>
+              <th><a href="#simulcast">Simulcast</a></th>
+              <td class="yes"></td>
+              <td class="inc"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="7">The ability to acquire media streams at multiple resolutions and framerates and send them to the peer.</td>
+            </tr>
+            <tr>
               <th><a href="#dataChannels">dataChannels</a></th>
               <td class="yes"></td>
               <td class="yes"></td>
@@ -161,20 +175,6 @@
             <tr class="about">
               <th></th>
               <td colspan="7">Data channel support comes in two flavors: "reliable" means they are guaranteed to arrive and arrive in the correct order, "unreliable" means that order doesn't matter and dropped messages are acceptable.</td>
-            </tr>
-            <tr>
-              <th><a href="#screenSharing">Screen Sharing</a></th>
-              <td title="requires an extension" class="inc"></td>
-              <td title="requires an extension" class="inc"></td>
-              <td class="no"></td>
-              <td title="behind a flag." class="inc"></td>
-              <td title="behind a flag." class="inc"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-            </tr>
-            <tr class="about">
-              <th></th>
-              <td colspan="7">The ability to request access to a MediaStream of the computer screen. This is crucial for feature parity with existing communication solutions. In Chrome, this requires an <a href="https://github.com/HenrikJoreteg/getScreenMedia/tree/master/extension-sample">extension</a>, unless you're using Google Hangouts which seems to be whitelisted for access to the API.</td>
             </tr>
             <tr>
               <th><a href="#rebroadcast">Stream re-broadcasting</a></th>
@@ -219,18 +219,18 @@
               <td colspan="7">Multiple browsers consistently being able to talk to each other is essential to making WebRTC a true web technology and not just something that makes for a nice demo.</td>
             </tr>
             <tr>
-              <th><a href="#echo">Echo cancellation</a></th>
+              <th><a href="#turn">TURN support</a></th>
               <td class="yes"></td>
               <td class="yes"></td>
               <td class="yes"></td>
-              <td class="inc"></td>
-              <td class="inc"></td>
+              <td class="yes"></td>
+              <td class="yes"></td>
               <td class="no"></td>
               <td class="no"></td>
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">This may be the most subjective item in this list. 3 or 4 users should be able to use a service like Talky without headphones on and not experience feedback problems.</td>
+              <td colspan="7">TURN servers are necessary for situations where STUN fails to produce two addressable endpoints. Which is a fancy way of saying, "getting around firewalls."</td>
             </tr>
           </table>
         </div>
