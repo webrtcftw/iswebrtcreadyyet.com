@@ -24,6 +24,8 @@ html(lang="en")
                 img(src="images/canary.png", alt="Chrome Canary", title="Chrome Canary")
               th 
                 img(src="images/chrome.png", alt="Chrome", title="Chrome")
+              th
+                img(src="images/opera.png", alt="Opera", title="Opera")
               th 
                 img(src="images/nightly.png", alt="Firefox Nightly", title="Firefox Nightly")
               th
@@ -32,17 +34,15 @@ html(lang="en")
                 img(src="images/ie.png", alt="Internet Explorer", title="Internet Explorer")
               th
                 img(src="images/safari.png", alt="Safari", title="Safari")
-              th
-                img(src="images/opera.png", alt="Opera", title="Opera")
             tr.versions
               th
               th Canary
               th Chrome
+              th Opera
               th Nightly
               th Firefox
               th IE
               th Safari
-              th Opera
             tr 
               th.feature 
                 a(href="#peerConn") PeerConnection API
@@ -50,9 +50,9 @@ html(lang="en")
               td.yes
               td.yes
               td.yes
+              td.yes
               td.no(title="not under consideration")
               td.no
-              td.yes
             tr.about
               th
               td(colspan="7") The basic building block for connecting to peers. Defined by the W3C WebRTC Working Group.
@@ -63,8 +63,8 @@ html(lang="en")
               td.no
               td.no
               td.no
-              td.inc(title="requires the ORTC prototype plugin")
               td.no
+              td.inc(title="requires the ORTC prototype plugin")
               td.no
             tr.about
               th
@@ -76,9 +76,9 @@ html(lang="en")
               td.yes
               td.yes
               td.yes
+              td.yes
               td.inc(title="requires the ORTC prototype plugin")
               td.no
-              td.yes
             tr.about
               th
               td(colspan="7") The ability to request access to a user's webcam and microphone.
@@ -101,10 +101,10 @@ html(lang="en")
               td.inc
               td.inc
               td.inc
-              td.no
-              td.no
-              td.no
               td.inc
+              td.no
+              td.no
+              td.no
             tr.about
               th
               td(colspan="7") The ability to specify restricted video sizes. This is important for bandwidth control. There are two aspects to this. The first is being able to specify constraints when first requesting access. The second is allowing you to apply constraints to an existing MediaStream. 
@@ -115,9 +115,9 @@ html(lang="en")
               td.yes
               td.yes
               td.yes
-              td.no
-              td.no
               td.yes
+              td.no
+              td.no
             tr.about
               th
               td(colspan="7") TURN servers are necessary for situations where STUN fails to produce two addressable endpoints. Which is a fancy way of saying, "getting around firewalls."
@@ -126,11 +126,11 @@ html(lang="en")
                 a(href="#mediaStream") MediaStream API
               td.yes
               td.yes
-              td.inc
-              td.inc
-              td.no
-              td.no
               td.yes
+              td.inc
+              td.inc
+              td.no
+              td.no
             tr.about
               th
               td(colspan="7") When you request user media or get media from a peer it's held in a MediaStream object. Having the ability to add/remove tracks, mute, and apply constraints makes it possible to do audio processing and control bandwidth consumption.
@@ -141,9 +141,9 @@ html(lang="en")
               td.yes
               td.yes
               td.yes
-              td.no
-              td.no
               td.yes
+              td.no
+              td.no
             tr.about
               th
               td(colspan="7") WebAudio enables processing of raw audio. For WebRTC applications it's important that this capability not only exist, but that it's capable of being used with a MediaStream as a source.
@@ -154,9 +154,9 @@ html(lang="en")
               td.yes
               td.yes
               td.yes
-              td.no
-              td.no
               td.yes
+              td.no
+              td.no
             tr.about
               th
               td(colspan="7") Data channel support comes in two flavors: "reliable" means they are guaranteed to arrive and arrive in the correct order, "unreliable" means that order doesn't matter and dropped messages are acceptable.
@@ -165,9 +165,9 @@ html(lang="en")
                 a(href="#screenSharing") Screen Sharing
               td.inc(title="requires an extension")
               td.inc(title="requires an extension")
+              td.no
               td.inc(title="behind a flag.")
-              td.no
-              td.no
+              td.inc(title="behind a flag.")
               td.no
               td.no
             tr.about
@@ -191,11 +191,11 @@ html(lang="en")
                 a(href="#multistream") Multiple Streams
               td.yes(title="using 'Plan B'")
               td.yes(title="using 'Plan B'")
-              td.no
-              td.no
-              td.no
-              td.no
               td.yes(title="using 'Plan B'")
+              td.no
+              td.no
+              td.no
+              td.no
             tr.about
               th
               td(colspan="7") 
@@ -209,9 +209,9 @@ html(lang="en")
               td.inc
               td.inc
               td.inc
-              td.no
-              td.no
               td.inc
+              td.no
+              td.no
             tr.about
               th
               td(colspan="7") Multiple browsers consistently being able to talk to each other is essential to making WebRTC a true web technology and not just something that makes for a nice demo.
@@ -220,11 +220,11 @@ html(lang="en")
                 a(href="#echo") Echo cancellation
               td.yes
               td.yes
+              td.yes
               td.inc
               td.inc
               td.no
               td.no
-              td.inc
             tr.about
               th
               td(colspan="7") This may be the most subjective item in this list. 3 or 4 users should be able to use a service like Talky without headphones on and not experience feedback problems.
@@ -304,7 +304,7 @@ html(lang="en")
           p Teams at Mozilla and Google are actively using Talky to dogfood and improve their WebRTC implementations.      
     
     script(src='http://static.andyet.com/tag.js')
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
 
     script(src='js/graph.js')
     script.
