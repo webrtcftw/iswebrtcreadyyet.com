@@ -4,18 +4,20 @@ Promoting WebRTC support through the clever use of a website with words on it.
 
 ## Developing on this
 
-It's a static site served by github pages but the html is written in jade but comes with a super simple little watcher script. 
+```sh
+#install depedencies
+npm install
 
-Leave this file running and it'll watch for changes on index.jade and complile it to index.html
+#start the dev server, will auto compile jade and css, and supports live reload if you have the chrome extension
+npm start
 
-Just run:
+#load http://localhost:4000
 
+#before committing, run npm build to rebuild assets
+#(you don't have to do this if you were running the dev server)
+npm build
 ```
-npm i
-node watch.js
-```
 
-(Alternatively, you can use LiveReload (or similar) and enable "Compile Jade" in the settings for that directory.)
 
 ## License
 
