@@ -207,7 +207,20 @@ html(lang="en")
               td(colspan="7") In order to support some of the more interesting topologies for routing data, we need to be able to take a MediaStream object from one peer and add it to another PeerConneciton. Without this, the only way of doing multi-user is a mesh network or a centralized server.
             tr 
               th.feature 
-                a(href="#peerConn") ORTC API
+                a(href="#getStats") getStats API
+              td.inc
+              td.inc
+              td.inc
+              td.inc
+              td.no
+              td.no
+              td.no
+            tr.about
+              th
+              td(colspan="7") The getStats API allows to query various information about the PeerConnection like the current bitrate, round trip time or the number of video frames decoded.
+            tr 
+              th.feature 
+                a(href="#ortc") ORTC API
               td.no
               td.no
               td.no
