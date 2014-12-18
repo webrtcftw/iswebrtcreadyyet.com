@@ -17,12 +17,13 @@
           <h2>Browser support scorecard</h2>
           <table>
             <tr class="browsers">
-              <th></th>
+              <th> </th>
               <th><img src="images/canary.png" alt="Chrome Canary" title="Chrome Canary"></th>
-              <th><img src="images/chrome.png" alt="Chrome" title="Chrome"></th>
+              <th> <img src="images/chrome.png" alt="Chrome" title="Chrome"></th>
               <th><img src="images/opera.png" alt="Opera" title="Opera"></th>
-              <th><img src="images/nightly.png" alt="Firefox Nightly" title="Firefox Nightly"></th>
+              <th> <img src="images/nightly.png" alt="Firefox Nightly" title="Firefox Nightly"></th>
               <th><img src="images/firefox.png" alt="Firefox" title="Firefox"></th>
+              <th><img src="images/bowser.png" alt="Bowser" title="Bowser"></th>
               <th><img src="images/ie.png" alt="Internet Explorer" title="Internet Explorer"></th>
               <th><img src="images/safari.png" alt="Safari" title="Safari"></th>
             </tr>
@@ -33,11 +34,13 @@
               <th>Opera</th>
               <th>Nightly</th>
               <th>Firefox</th>
+              <th>Bowser</th>
               <th>IE</th>
               <th>Safari</th>
             </tr>
-            <tr>
-              <th class="feature"><a href="#peerConn">PeerConnection API</a></th>
+            <tr> 
+              <th class="feature"> <a href="#peerConn">PeerConnection API</a></th>
+              <td class="yes"></td>
               <td class="yes"></td>
               <td class="yes"></td>
               <td class="yes"></td>
@@ -52,6 +55,7 @@
             </tr>
             <tr>
               <th><a href="#getUserMedia">getUserMedia</a></th>
+              <td class="yes"></td>
               <td class="yes"></td>
               <td class="yes"></td>
               <td class="yes"></td>
@@ -77,6 +81,7 @@
               <td class="yes"></td>
               <td class="no"></td>
               <td class="no"></td>
+              <td class="no"></td>
             </tr>
             <tr class="about">
               <th></th>
@@ -89,6 +94,7 @@
               <td class="yes"></td>
               <td class="yes"></td>
               <td class="yes"></td>
+              <td title="coming soon" class="no"></td>
               <td class="no"></td>
               <td class="no"></td>
             </tr>
@@ -98,6 +104,7 @@
             </tr>
             <tr>
               <th><a href="#turn">TURN support</a></th>
+              <td class="yes"></td>
               <td class="yes"></td>
               <td class="yes"></td>
               <td class="yes"></td>
@@ -117,6 +124,7 @@
               <td class="yes"></td>
               <td class="inc"></td>
               <td class="inc"></td>
+              <td class="yes"></td>
               <td class="no"></td>
               <td class="no"></td>
             </tr>
@@ -131,6 +139,7 @@
               <td class="yes"></td>
               <td class="inc"></td>
               <td class="inc"></td>
+              <td class="yes"></td>
               <td class="no"></td>
               <td class="no"></td>
             </tr>
@@ -145,17 +154,22 @@
               <td title="using 'Plan B'" class="yes"></td>
               <td class="no"></td>
               <td class="no"></td>
+              <td class="yes"></td>
               <td class="no"></td>
               <td class="no"></td>
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">The ability to transport multiple audio and video streams on the same peerconnection. This is important for transporting multiple streams from a centralized server or rebroadcasting streams from other peers. Dear Firefox, doing the same on multiple connections <a href="https://hacks.mozilla.org/2013/09/webrtc-update-and-workarounds/">as suggested here</a> is not sufficient.                     </td>
+              <td colspan="7">
+                 
+                The ability to transport multiple audio and video streams on the same peerconnection. This is important for transporting multiple streams from a centralized server or rebroadcasting streams from other peers. Dear Firefox, doing the same on multiple connections <a href="https://hacks.mozilla.org/2013/09/webrtc-update-and-workarounds/">as suggested here</a> is not sufficient.                     
+              </td>
             </tr>
             <tr>
               <th><a href="#simulcast">Simulcast</a></th>
               <td class="inc"></td>
               <td class="inc"></td>
+              <td class="no"></td>
               <td class="no"></td>
               <td class="no"></td>
               <td class="no"></td>
@@ -175,6 +189,7 @@
               <td title="behind a flag." class="inc"></td>
               <td class="no"></td>
               <td class="no"></td>
+              <td class="no"></td>
             </tr>
             <tr class="about">
               <th></th>
@@ -187,6 +202,7 @@
               <td class="inc"></td>
               <td class="inc"></td>
               <td class="no"></td>
+              <td class="inc"></td>
               <td class="no"></td>
               <td class="no"></td>
             </tr>
@@ -203,17 +219,19 @@
               <td class="no"></td>
               <td class="no"></td>
               <td class="no"></td>
+              <td class="no"></td>
             </tr>
             <tr class="about">
               <th></th>
               <td colspan="7">In order to support some of the more interesting topologies for routing data, we need to be able to take a MediaStream object from one peer and add it to another PeerConneciton. Without this, the only way of doing multi-user is a mesh network or a centralized server.</td>
             </tr>
-            <tr>
-              <th class="feature"><a href="#getStats">getStats API</a></th>
+            <tr> 
+              <th class="feature"> <a href="#getStats">getStats API</a></th>
               <td class="inc"></td>
               <td class="inc"></td>
               <td class="inc"></td>
               <td class="inc"></td>
+              <td class="no"></td>
               <td class="no"></td>
               <td class="no"></td>
               <td class="no"></td>
@@ -222,8 +240,9 @@
               <th></th>
               <td colspan="7">The <a href="http://w3c.github.io/webrtc-stats/webrtc-stats">Statistics API</a> allows to query various information about the PeerConnection like the current bitrate, round trip time or the number of video frames decoded.</td>
             </tr>
-            <tr>
-              <th class="feature"><a href="#ortc">ORTC API</a></th>
+            <tr> 
+              <th class="feature"> <a href="#ortc">ORTC API</a></th>
+              <td class="no"></td>
               <td class="no"></td>
               <td class="no"></td>
               <td class="no"></td>
@@ -243,6 +262,7 @@
               <td class="inc"></td>
               <td class="inc"></td>
               <td class="inc"></td>
+              <td class="inc"></td>
               <td class="no"></td>
               <td class="no"></td>
             </tr>
@@ -257,9 +277,7 @@
           <h2>Recent conversation quality</h2>
           <h3>Human reported feedback based on the last <span data-browser="overall" data-metric="count" data-no-animate="true" class="rating"></span> conversations.</h3>
           <!--
-          h2 Current Overall Score 
-            span.rating(data-browser='overall', data-metric='highQuality', data-metric-unit='percentage')
-            
+          <h2>Current Overall Score <span data-browser="overall" data-metric="highQuality" data-metric-unit="percentage" class="rating"></span></h2>
           -->
           <div class="report-card-browser">
             <h3><img src="images/chrome.png">Chrome
@@ -273,7 +291,10 @@
               </div>
             </div>
             <div class="report-card-section">
-              <h4>Good video: <span data-browser="Chrome" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="rating"></span></h4>
+              <h4>
+                 
+                Good video: <span data-browser="Chrome" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="rating"></span>
+              </h4>
               <div data-browser="Chrome" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="bar-chart">
                 <div class="bar-chart-background">
                   <div class="bar-chart-bar"></div>
@@ -281,7 +302,10 @@
               </div>
             </div>
             <div class="report-card-section">
-              <h4>Good audio: <span data-browser="Chrome" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="rating"></span></h4>
+              <h4>
+                 
+                Good audio: <span data-browser="Chrome" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="rating"></span>
+              </h4>
               <div data-browser="Chrome" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="bar-chart">
                 <div class="bar-chart-background">
                   <div class="bar-chart-bar"></div>
@@ -301,7 +325,10 @@
               </div>
             </div>
             <div class="report-card-section">
-              <h4>Good video: <span data-browser="Firefox" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="rating"></span></h4>
+              <h4>
+                 
+                Good video: <span data-browser="Firefox" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="rating"></span>
+              </h4>
               <div data-browser="Firefox" data-metric="videoProblems" data-metric-unit="percentage-inverted" class="bar-chart">
                 <div class="bar-chart-background">
                   <div class="bar-chart-bar"></div>
@@ -309,7 +336,10 @@
               </div>
             </div>
             <div class="report-card-section">
-              <h4>Good audio: <span data-browser="Firefox" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="rating"></span></h4>
+              <h4>
+                 
+                Good audio: <span data-browser="Firefox" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="rating"></span>
+              </h4>
               <div data-browser="Firefox" data-metric="audioProblems" data-metric-unit="percentage-inverted" class="bar-chart">
                 <div class="bar-chart-background">
                   <div class="bar-chart-bar"></div>
@@ -327,13 +357,21 @@
           <p>There's a big difference between technology that makes for an interesting demo and what's needed for something that could work on par with existing video chat products.</p>
           <p>That gap can be closed&mdash;and data can help browser developers championing these great features to close it faster.</p>
           <h2>Here's how you can help:</h2>
-          <p><strong>Use <a href="https://talky.io">Talky  </a>the next time you have need for a web video chat, then submit the feedback form. </strong></p>
+          <p><strong>
+               
+              Use <a href="https://talky.io">Talky  </a>the next time you have need for a web video chat, then submit the feedback form. </strong></p>
           <p>All statistics are collected anonymously and will be reported publicly on this site.</p>
         </article>
         <aside><a href="http://talky.io" alt="Talky" class="talky-logo"></a>
           <h3>Help test WebRTC now</h3>
-          <p>Talky is built entirely on open-source, MIT-licensed <a href="http://simplewebrtc.com">SimpleWebRTC </a>toolkit.</p>
-          <p>SimpleWebRTC is intended to be fully interoperable with any signaling platform (open source servers like <a href="http://github.com/andyet/signalmaster">SignalMaster</a>, federated protocols like XMPP, and commercial products.)</p>
+          <p>
+             
+            Talky is built entirely on open-source, MIT-licensed <a href="http://simplewebrtc.com">SimpleWebRTC </a>toolkit.
+          </p>
+          <p>
+             
+            SimpleWebRTC is intended to be fully interoperable with any signaling platform (open source servers like <a href="http://github.com/andyet/signalmaster">SignalMaster</a>, federated protocols like XMPP, and commercial products.)
+          </p>
           <p>Teams at Mozilla and Google are actively using Talky to dogfood and improve their WebRTC implementations.      </p>
         </aside>
       </section>
