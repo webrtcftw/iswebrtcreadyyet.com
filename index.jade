@@ -31,6 +31,8 @@ html(lang="en")
               th
                 img(src="images/firefox.png", alt="Firefox", title="Firefox")
               th
+                img(src="images/bowser.png", alt="Bowser", title="Bowser")
+              th
                 img(src="images/ie.png", alt="Internet Explorer", title="Internet Explorer")
               th
                 img(src="images/safari.png", alt="Safari", title="Safari")
@@ -41,11 +43,13 @@ html(lang="en")
               th Opera
               th Nightly
               th Firefox
+              th Bowser
               th IE
               th Safari
             tr 
               th.feature 
                 a(href="#peerConn") PeerConnection API
+              td.yes
               td.yes
               td.yes
               td.yes
@@ -59,6 +63,7 @@ html(lang="en")
             tr
               th
                 a(href="#getUserMedia") getUserMedia
+              td.yes
               td.yes
               td.yes
               td.yes
@@ -82,6 +87,7 @@ html(lang="en")
               td.yes
               td.no
               td.no
+              td.no
             tr.about
               th
               td(colspan="7") WebAudio enables processing of raw audio. For WebRTC applications it's important that this capability not only exist, but that it's capable of being used with a MediaStream as a source.
@@ -93,6 +99,7 @@ html(lang="en")
               td.yes
               td.yes
               td.yes
+              td.no(title="coming soon")
               td.no
               td.no
             tr.about
@@ -101,6 +108,7 @@ html(lang="en")
             tr
               th
                 a(href="#turn") TURN support
+              td.yes
               td.yes
               td.yes
               td.yes
@@ -119,6 +127,7 @@ html(lang="en")
               td.yes
               td.inc
               td.inc
+              td.yes
               td.no
               td.no
             tr.about
@@ -132,6 +141,7 @@ html(lang="en")
               td.yes
               td.inc
               td.inc
+              td.yes
               td.no
               td.no
             tr.about
@@ -145,6 +155,7 @@ html(lang="en")
               td.yes(title="using 'Plan B'")
               td.no
               td.no
+              td.yes
               td.no
               td.no
             tr.about
@@ -163,6 +174,7 @@ html(lang="en")
               td.no
               td.no
               td.no
+              td.no
             tr.about
               th
               td(colspan="7") The ability to acquire media streams at multiple resolutions and framerates and send them to the peer. Chrome allows this through undocumented SDP mangling.
@@ -176,6 +188,7 @@ html(lang="en")
               td.inc(title="behind a flag.")
               td.no
               td.no
+              td.no
             tr.about
               th
               td(colspan="7") Current extensions require an extension or a flag. It's understandable there are some security and privacy concerns around screen sharing as a feature, so browser vendors are stepping cautiously as they try to work out how this should be implemented.              
@@ -187,6 +200,7 @@ html(lang="en")
               td.inc
               td.inc
               td.no
+              td.inc
               td.no
               td.no
             tr.about
@@ -197,6 +211,7 @@ html(lang="en")
                 a(href="#rebroadcast") Stream re-broadcasting
               td.inc
               td.inc
+              td.no
               td.no
               td.no
               td.no
@@ -215,12 +230,14 @@ html(lang="en")
               td.no
               td.no
               td.no
+              td.no
             tr.about
               th
               td(colspan="7") The <a href="http://w3c.github.io/webrtc-stats/webrtc-stats">Statistics API</a> allows to query various information about the PeerConnection like the current bitrate, round trip time or the number of video frames decoded.
             tr 
               th.feature 
                 a(href="#ortc") ORTC API
+              td.no
               td.no
               td.no
               td.no
@@ -234,6 +251,7 @@ html(lang="en")
             tr
               th
                 a(href="#echo") Solid interoperability
+              td.inc
               td.inc
               td.inc
               td.inc
