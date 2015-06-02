@@ -318,9 +318,9 @@
             </tr>
             <tr>
               <th><a href="#promisegum">Promise based getUserMedia</a></th>
-              <td class="no"></td>
-              <td class="no"></td>
-              <td class="no"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
               <td class="yes"></td>
               <td class="yes"></td>
               <td class="yes"></td>
@@ -329,13 +329,13 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">GetUserMedia has moved to mediaDevices (instead of hanging directly on navigator), and uses Promises instead of callbacks.             </td>
+              <td colspan="7">GetUserMedia has moved to mediaDevices (instead of hanging directly on navigator), and uses Promises instead of callbacks. In Chrome this is shimmed by <a href="https://github.com/webrtc/adapter">adapter.js</a>.</td>
             </tr>
             <tr>
               <th><a href="#promisepc">Promise based PeerConnection API</a></th>
-              <td class="no"></td>
-              <td class="no"></td>
-              <td class="no"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
               <td class="yes"></td>
               <td class="yes"></td>
               <td class="yes"></td>
@@ -344,7 +344,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">According to the latest W3C specification Promises should be used instead of callbacks.</td>
+              <td colspan="7">According to the latest W3C specification Promises should be used instead of callbacks. Chrome shims this when using <a href="https://github.com/webrtc/adapter">adapter.js</a>.</td>
             </tr>
           </table>
         </div>
