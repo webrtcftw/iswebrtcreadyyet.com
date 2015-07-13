@@ -51,7 +51,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">The basic building block for connecting to peers. Defined by the W3C WebRTC Working Group.</td>
+              <td colspan="8">The basic building block for connecting to peers. Defined by the W3C WebRTC Working Group.</td>
             </tr>
             <tr>
               <th><a href="#getUserMedia">getUserMedia</a></th>
@@ -66,7 +66,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">The ability to request access to a user's webcam and microphone.</td>
+              <td colspan="8">The ability to request access to a user's webcam and microphone.</td>
             </tr>
             <tr>
               <th><a href="#dataChannels">dataChannels</a></th>
@@ -81,7 +81,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">Data channel support comes in two flavors: "reliable" means they are guaranteed to arrive and arrive in the correct order, "unreliable" means that order doesn't matter and dropped messages are acceptable.</td>
+              <td colspan="8">Data channel support comes in two flavors: "reliable" means they are guaranteed to arrive and arrive in the correct order, "unreliable" means that order doesn't matter and dropped messages are acceptable.</td>
             </tr>
             <tr>
               <th><a href="#turn">TURN support</a></th>
@@ -96,7 +96,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">TURN servers are necessary for situations where STUN fails to produce two addressable endpoints. Which is a fancy way of saying, "getting around firewalls."</td>
+              <td colspan="8">TURN servers are necessary for situations where STUN fails to produce two addressable endpoints. Which is a fancy way of saying, "getting around firewalls."</td>
             </tr>
             <tr>
               <th><a href="#echo">Echo cancellation</a></th>
@@ -111,7 +111,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">This may be the most subjective item in this list. 3 or 4 users should be able to use a service like Talky without headphones on and not experience feedback problems.</td>
+              <td colspan="8">This may be the most subjective item in this list. 3 or 4 users should be able to use a service like Talky without headphones on and not experience feedback problems.</td>
             </tr>
             <tr>
               <th><a href="#mediaStream">MediaStream API</a></th>
@@ -126,7 +126,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">When you request user media or get media from a peer it's held in a MediaStream object. Having the ability to add/remove tracks, mute, and apply constraints makes it possible to do audio processing and control bandwidth consumption. </td>
+              <td colspan="8">When you request user media or get media from a peer it's held in a MediaStream object. Having the ability to add/remove tracks, mute, and apply constraints makes it possible to do audio processing and control bandwidth consumption. </td>
             </tr>
             <tr>
               <th><a href="#multistream">Multiple Streams</a></th>
@@ -141,7 +141,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">
+              <td colspan="8">
                  
                 The ability to transport multiple audio and video streams on the same peerconnection. This is important for transporting multiple streams from a centralized server or rebroadcasting streams from other peers.
               </td>
@@ -159,7 +159,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">The ability to acquire media streams at multiple resolutions and framerates and send them to the peer. Chrome allows this through undocumented SDP mangling.</td>
+              <td colspan="8">The ability to acquire media streams at multiple resolutions and framerates and send them to the peer. Chrome allows this through undocumented SDP mangling.</td>
             </tr>
             <tr>
               <th><a href="#screenSharing">Screen Sharing</a></th>
@@ -174,7 +174,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">The ability to request access to a MediaStream of the computer screen. This is crucial for feature parity with existing communication solutions. In Chrome, this requires an <a href="https://github.com/HenrikJoreteg/getScreenMedia/tree/master/extension-sample">extension</a>. It's understandable there are some security and privacy concerns around screen sharing as a feature, so browser vendors are stepping cautiously as they try to work out how this should be implemented.</td>
+              <td colspan="8">The ability to request access to a MediaStream of the computer screen. This is crucial for feature parity with existing communication solutions. In Chrome, this requires an <a href="https://github.com/HenrikJoreteg/getScreenMedia/tree/master/extension-sample">extension</a>. It's understandable there are some security and privacy concerns around screen sharing as a feature, so browser vendors are stepping cautiously as they try to work out how this should be implemented.</td>
             </tr>
             <tr>
               <th><a href="#mediaConstraints" title="for bandwidth control">mediaConstraints</a></th>
@@ -189,7 +189,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">The ability to specify restricted video sizes. This is important for bandwidth control. There are two aspects to this. The first is being able to specify constraints when first requesting access. The second is allowing you to apply constraints to an existing MediaStream.</td>
+              <td colspan="8">The ability to specify restricted video sizes. This is important for bandwidth control. There are two aspects to this. The first is being able to specify constraints when first requesting access. The second is allowing you to apply constraints to an existing MediaStream.</td>
             </tr>
             <tr>
               <th><a href="#rebroadcast">Stream re-broadcasting</a></th>
@@ -204,7 +204,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">In order to support some of the more interesting topologies for routing data, we need to be able to take a MediaStream object from one peer and add it to another PeerConneciton. Without this, the only way of doing multi-user is a mesh network or a centralized server.</td>
+              <td colspan="8">In order to support some of the more interesting topologies for routing data, we need to be able to take a MediaStream object from one peer and add it to another PeerConneciton. Without this, the only way of doing multi-user is a mesh network or a centralized server.</td>
             </tr>
             <tr> 
               <th class="feature"> <a href="#getStats">getStats API</a></th>
@@ -219,7 +219,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">The <a href="http://w3c.github.io/webrtc-stats/webrtc-stats">Statistics API</a> allows to query various information about the PeerConnection like the current bitrate, round trip time or the number of video frames decoded.</td>
+              <td colspan="8">The <a href="http://w3c.github.io/webrtc-stats/webrtc-stats">Statistics API</a> allows to query various information about the PeerConnection like the current bitrate, round trip time or the number of video frames decoded.</td>
             </tr>
             <tr> 
               <th class="feature"> <a href="#ortc">ORTC API</a></th>
@@ -234,7 +234,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">An alternative to the PeerConnection API defined by the W3C ORTC Community Group. A prototype plugin for Chrome and Internet Explorer is available from <a href="http://msopentech.com/blog/2014/04/25/updated-ortc-api-prototype-released/">MS Open Tech</a>. This will be superseeded by <a href="http://blogs.msdn.com/b/ie/archive/2014/10/27/bringing-interoperable-real-time-communications-to-the-web.aspx">native integration in Internet Explorer</a> at some point.</td>
+              <td colspan="8">An alternative to the PeerConnection API defined by the W3C ORTC Community Group. A prototype plugin for Chrome and Internet Explorer is available from <a href="http://msopentech.com/blog/2014/04/25/updated-ortc-api-prototype-released/">MS Open Tech</a>. This will be superseeded by <a href="http://blogs.msdn.com/b/ie/archive/2014/10/27/bringing-interoperable-real-time-communications-to-the-web.aspx">native integration in Internet Explorer</a> at some point.</td>
             </tr>
             <tr>
               <th><a href="#h264">H.264 video</a></th>
@@ -249,7 +249,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">Support for H.264 video. A WebRTC compliant browser should support both H.264 and VP8 video.</td>
+              <td colspan="8">Support for H.264 video. A WebRTC compliant browser should support both H.264 and VP8 video.</td>
             </tr>
             <tr>
               <th><a href="#vp8">VP8 video</a></th>
@@ -264,7 +264,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">Support for VP8 video. A WebRTC compliant browser should support both H.264 and VP8 video.</td>
+              <td colspan="8">Support for VP8 video. A WebRTC compliant browser should support both H.264 and VP8 video.</td>
             </tr>
             <tr>
               <th><a href="#echo">Solid interoperability</a></th>
@@ -279,7 +279,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">Multiple browsers consistently being able to talk to each other is essential to making WebRTC a true web technology and not just something that makes for a nice demo.              </td>
+              <td colspan="8">Multiple browsers consistently being able to talk to each other is essential to making WebRTC a true web technology and not just something that makes for a nice demo.              </td>
             </tr>
             <tr>
               <th><a href="#srcobject">srcObject in media element</a></th>
@@ -294,7 +294,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">srcObject is the way to indicate to a video or audio element that it should play a MediaStream (createObjectURL is obsoleted in the standard and leaks streams until the document dies).</td>
+              <td colspan="8">srcObject is the way to indicate to a video or audio element that it should play a MediaStream (createObjectURL is obsoleted in the standard and leaks streams until the document dies).</td>
             </tr>
             <tr>
               <th><a href="#promisegum">Promise based getUserMedia</a></th>
@@ -309,7 +309,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">GetUserMedia has moved to mediaDevices (instead of hanging directly on navigator), and uses Promises instead of callbacks. In Chrome this is shimmed by <a href="https://github.com/webrtc/adapter">adapter.js</a>.</td>
+              <td colspan="8">GetUserMedia has moved to mediaDevices (instead of hanging directly on navigator), and uses Promises instead of callbacks. In Chrome this is shimmed by <a href="https://github.com/webrtc/adapter">adapter.js</a>.</td>
             </tr>
             <tr>
               <th><a href="#promisepc">Promise based PeerConnection API</a></th>
@@ -324,7 +324,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">According to the latest W3C specification Promises should be used instead of callbacks. Chrome shims this when using <a href="https://github.com/webrtc/adapter">adapter.js</a>.</td>
+              <td colspan="8">According to the latest W3C specification Promises should be used instead of callbacks. Chrome shims this when using <a href="https://github.com/webrtc/adapter">adapter.js</a>.</td>
             </tr>
             <tr>
               <th><a href="#webaudio">WebAudio Integration</a></th>
@@ -339,7 +339,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">Support for modifying audio using WebAudio on
+              <td colspan="8">Support for modifying audio using WebAudio on
               both input and output is important.</td>
             </tr>
             <tr>
@@ -355,7 +355,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">Support for inserting generated or modified
+              <td colspan="8">Support for inserting generated or modified
               video into a MediaStream from a canvas.  Important for funny
               hats (and sharing games, etc).</td>
             </tr>
@@ -372,7 +372,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">Support for commandline or javascript flags that use fake devices or files for getUserMedia and allow bypassing user prompts. This allows for automatic testing using services such as travis-ci which is <a href='http://rtc.io/testing-process.html'>described here</a>.</td>
+              <td colspan="8">Support for commandline or javascript flags that use fake devices or files for getUserMedia and allow bypassing user prompts. This allows for automatic testing using services such as travis-ci which is <a href='http://rtc.io/testing-process.html'>described here</a>.</td>
             </tr>
           </table>
         </div>
