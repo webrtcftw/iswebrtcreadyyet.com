@@ -24,7 +24,7 @@
               <th><img src="images/nightly.png" alt="Firefox Nightly" title="Firefox Nightly"></th>
               <th><img src="images/firefox.png" alt="Firefox" title="Firefox"></th>
               <th><img src="images/bowser.png" alt="Bowser" title="Bowser"></th>
-              <th><img src="images/ie.png" alt="Internet Explorer" title="Internet Explorer"></th>
+              <th><img src="images/edge.png" alt="Edge" title="Microsoft Edge"></th>
               <th><img src="images/safari.png" alt="Safari" title="Safari"></th>
             </tr>
             <tr class="versions">
@@ -35,7 +35,7 @@
               <th>Nightly</th>
               <th>Firefox</th>
               <th>Bowser</th>
-              <th>IE</th>
+              <th>Edge</th>
               <th>Safari</th>
             </tr>
             <tr> 
@@ -61,16 +61,12 @@
               <td class="yes"></td>
               <td class="yes"></td>
               <td class="yes"></td>
-              <td title="requires the ORTC prototype plugin" class="inc"></td>
+              <td class="yes"></td>
               <td class="no"></td>
             </tr>
             <tr class="about">
               <th></th>
               <td colspan="7">The ability to request access to a user's webcam and microphone.</td>
-            </tr>
-            <tr class="about">
-              <th></th>
-              <td colspan="7">The ability to request access to a MediaStream of the computer screen. This is crucial for feature parity with existing communication solutions. In Chrome, this requires an <a href="https://github.com/HenrikJoreteg/getScreenMedia/tree/master/extension-sample">extension</a>, unless you're using Google Hangouts which seems to be whitelisted for access to the API.</td>
             </tr>
             <tr>
               <th><a href="#dataChannels">dataChannels</a></th>
@@ -178,7 +174,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">Current extensions require an extension or a flag. It's understandable there are some security and privacy concerns around screen sharing as a feature, so browser vendors are stepping cautiously as they try to work out how this should be implemented.              </td>
+              <td colspan="7">The ability to request access to a MediaStream of the computer screen. This is crucial for feature parity with existing communication solutions. In Chrome, this requires an <a href="https://github.com/HenrikJoreteg/getScreenMedia/tree/master/extension-sample">extension</a>. It's understandable there are some security and privacy concerns around screen sharing as a feature, so browser vendors are stepping cautiously as they try to work out how this should be implemented.</td>
             </tr>
             <tr>
               <th><a href="#mediaConstraints" title="for bandwidth control">mediaConstraints</a></th>
@@ -193,7 +189,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">The ability to specify restricted video sizes. This is important for bandwidth control. There are two aspects to this. The first is being able to specify constraints when first requesting access. The second is allowing you to apply constraints to an existing MediaStream.                 </td>
+              <td colspan="7">The ability to specify restricted video sizes. This is important for bandwidth control. There are two aspects to this. The first is being able to specify constraints when first requesting access. The second is allowing you to apply constraints to an existing MediaStream.</td>
             </tr>
             <tr>
               <th><a href="#rebroadcast">Stream re-broadcasting</a></th>
@@ -233,7 +229,7 @@
               <td class="no"></td>
               <td class="no"></td>
               <td class="no"></td>
-              <td title="requires the ORTC prototype plugin" class="inc"></td>
+              <td class="no"></td>
               <td class="no"></td>
             </tr>
             <tr class="about">
@@ -290,17 +286,15 @@
               <td class="no"></td>
               <td class="no"></td>
               <td class="no"></td>
-              <td class="yes"></td>
-              <td class="yes"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
               <td class="no"></td>
-              <td class="no"></td>
+              <td class="yes"></td>
               <td class="no"></td>
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="7">srcObject is the way to indicate to a video or audio element that it should
-              play a MediaStream (createObjectURL is obsoleted in std and
-              leaks streams until the document dies).             </td>
+              <td colspan="7">srcObject is the way to indicate to a video or audio element that it should play a MediaStream (createObjectURL is obsoleted in the standard and leaks streams until the document dies).</td>
             </tr>
             <tr>
               <th><a href="#promisegum">Promise based getUserMedia</a></th>
@@ -310,7 +304,7 @@
               <td class="yes"></td>
               <td class="yes"></td>
               <td class="yes"></td>
-              <td class="no"></td>
+              <td class="yes"></td>
               <td class="no"></td>
             </tr>
             <tr class="about">
