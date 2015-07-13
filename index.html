@@ -126,7 +126,22 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="8">When you request user media or get media from a peer it's held in a MediaStream object. Having the ability to add/remove tracks, mute, and apply constraints makes it possible to do audio processing and control bandwidth consumption. </td>
+              <td colspan="8">When you request user media or get media from a peer it's held in a MediaStream object. Having the ability to add/remove and mute tracks it possible to do audio processing and control bandwidth consumption. </td>
+            </tr>
+            <tr>
+              <th><a href="#mediaConstraints" title="for bandwidth control">mediaConstraints</a></th>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="inc"></td>
+              <td class="no"></td>
+              <td class="no"></td>
+            </tr>
+            <tr class="about">
+              <th></th>
+              <td colspan="8">The ability to specify restricted video sizes. This is important for bandwidth control. There are two aspects to this. The first is being able to specify constraints when first requesting access. The second is allowing you to apply constraints to an existing MediaStream.</td>
             </tr>
             <tr>
               <th><a href="#multistream">Multiple Streams</a></th>
@@ -175,21 +190,6 @@
             <tr class="about">
               <th></th>
               <td colspan="8">The ability to request access to a MediaStream of the computer screen. This is crucial for feature parity with existing communication solutions. In Chrome, this requires an <a href="https://github.com/HenrikJoreteg/getScreenMedia/tree/master/extension-sample">extension</a>. It's understandable there are some security and privacy concerns around screen sharing as a feature, so browser vendors are stepping cautiously as they try to work out how this should be implemented.</td>
-            </tr>
-            <tr>
-              <th><a href="#mediaConstraints" title="for bandwidth control">mediaConstraints</a></th>
-              <td class="inc"></td>
-              <td class="inc"></td>
-              <td class="inc"></td>
-              <td class="inc"></td>
-              <td class="inc"></td>
-              <td class="inc"></td>
-              <td class="no"></td>
-              <td class="no"></td>
-            </tr>
-            <tr class="about">
-              <th></th>
-              <td colspan="8">The ability to specify restricted video sizes. This is important for bandwidth control. There are two aspects to this. The first is being able to specify constraints when first requesting access. The second is allowing you to apply constraints to an existing MediaStream.</td>
             </tr>
             <tr>
               <th><a href="#rebroadcast">Stream re-broadcasting</a></th>
