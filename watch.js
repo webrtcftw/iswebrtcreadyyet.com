@@ -1,14 +1,10 @@
-// run this
-var jade = require('jade');
-var fs = require('fs');
+var express = require('express');
+var http = require('http');
 
+var app = express();
 
-fs.watch('index.jade', function (event, filename) {
-    var jadeString = fs.readFileSync(__dirname + '/index.jade', 'utf8');
-    var fn = jade.compile(jadeString, {pretty: true});
-    var date = new Date();
-    fs.writeFileSync('index.html', fn({}));
-    console.log(date.toLocaleTimeString() + ': updated index.html');
-});
+app.use(express.static('.'));
 
-console.log('watching for changes to index.jade');
+// Create an HTTP service.
+http.createServer(app).listen(8000);
+console.log('serving on http://localhost:8000');

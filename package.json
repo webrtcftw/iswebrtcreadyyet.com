@@ -2,11 +2,11 @@
   "name": "iswebrtcready.org",
   "version": "0.0.1",
   "repository": {
-    "type": "git", 
+    "type": "git",
     "url": "git@github.com:andyet/iswebrtcready.org.git"
   },
   "description": "Promoting WebRTC support",
   "devDependencies": {
-    "jade": "0.34.1"
+    "express": "^4.13.3"
   }
 }
