@@ -38,7 +38,7 @@
               <th>Edge</th>
               <th>Safari</th>
             </tr>
-            <tr> 
+            <tr>
               <th class="feature"> <a href="#peerConn">PeerConnection API</a></th>
               <td class="yes"></td>
               <td class="yes"></td>
@@ -203,7 +203,7 @@
               <th></th>
               <td colspan="8">In order to support some of the more interesting topologies for routing data, we need to be able to take a MediaStream object from one peer and add it to another PeerConneciton. Without this, the only way of doing multi-user is a mesh network or a centralized server.</td>
             </tr>
-            <tr> 
+            <tr>
               <th class="feature"> <a href="#getStats">getStats API</a></th>
               <td class="inc"></td>
               <td class="inc"></td>
@@ -218,7 +218,7 @@
               <th></th>
               <td colspan="8">The <a href="http://w3c.github.io/webrtc-stats/webrtc-stats">Statistics API</a> allows to query various information about the PeerConnection like the current bitrate, round trip time or the number of video frames decoded.</td>
             </tr>
-            <tr> 
+            <tr>
               <th class="feature"> <a href="#ortc">ORTC API</a></th>
               <td class="no"></td>
               <td class="no"></td>
@@ -369,6 +369,7 @@
               <td colspan="8">Support for commandline or javascript flags that use fake devices or files for getUserMedia and allow bypassing user prompts. This allows for automatic testing using services such as travis-ci which is <a href='http://rtc.io/testing-process.html'>described here</a>.</td>
             </tr>
           </table>
+          <h3>Completion Score: <span class="score"></span>%</h3>
         </div>
         <p>See an error? This site is open source on Github, so please let us know by <a href="https://github.com/webrtcftw/iswebrtcreadyyet.com/issues">opening an issue</a>.</p>
       </section>
@@ -386,11 +387,11 @@
         <aside><a href="http://talky.io" alt="Talky" class="talky-logo"></a>
           <h3>Help test WebRTC now</h3>
           <p>
-             
+
             Talky is built entirely on open-source, MIT-licensed <a href="http://simplewebrtc.com">SimpleWebRTC </a>toolkit.
           </p>
           <p>
-             
+
             SimpleWebRTC is intended to be fully interoperable with any signaling platform (open source servers like <a href="http://github.com/andyet/signalmaster">SignalMaster</a>, federated protocols like XMPP, and commercial products.)
           </p>
           <p>Teams at Mozilla and Google are actively using Talky to dogfood and improve their WebRTC implementations.      </p>
@@ -404,6 +405,12 @@
         $('table').delegate('th a', 'click', function () {
           $(this).parents('tr').next().slideToggle();
         });
+        var yes = $('td.yes').length,
+            inc = $('td.inc').length,
+            no = $('td.no').length;
+
+        var score = ((yes + 0.5 * inc) / (yes + inc + no) * 100).toFixed(1);
+        $('span.score').text(score);
       });
     </script>
   </body>
