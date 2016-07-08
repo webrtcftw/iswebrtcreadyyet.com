@@ -306,7 +306,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="8">GetUserMedia has moved to mediaDevices (instead of hanging directly on navigator), and uses Promises instead of callbacks. In Chrome this is shimmed by <a href="https://github.com/webrtc/adapter">adapter.js</a>.</td>
+              <td colspan="8">GetUserMedia has moved to mediaDevices (instead of hanging directly on navigator), and uses Promises instead of callbacks. In Chrome this was shimmed by <a href="https://github.com/webrtc/adapter">adapter.js</a>.</td>
             </tr>
             <tr>
               <th><a href="#promisepc">Promise based PeerConnection API</a></th>
@@ -321,7 +321,7 @@
             </tr>
             <tr class="about">
               <th></th>
-              <td colspan="8">According to the latest W3C specification Promises should be used instead of callbacks. Chrome shims this when using <a href="https://github.com/webrtc/adapter">adapter.js</a>. For Edge, there is a variant of adapter which supports the PeerConnection API with Promises.</td>
+              <td colspan="8">According to the latest W3C specification Promises should be used instead of callbacks. Natively supported in Chrome and Firefox, shims in <a href="https://github.com/webrtc/adapter">adapter.js</a> are available for older versions (or Edge which does not include a native RTCPeerConnection.</a>
             </tr>
             <tr>
               <th><a href="#webaudio">WebAudio Integration</a></th>
